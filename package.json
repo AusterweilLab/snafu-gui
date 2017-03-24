@@ -1,5 +1,5 @@
 {
-    "name":"semnet",
+    "name":"snafu",
     "main":"html/index_standalone.html",
     "window": {
         "frame": true,
