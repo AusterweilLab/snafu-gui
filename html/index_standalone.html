@@ -1,0 +1,131 @@
+<html>
+<head>
+    <title>semnet</title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script type="text/javascript" src="../lib/jquery.js" defer></script>
+    <script type="text/javascript" src="../lib/rivets.js" defer></script>
+    <script type="text/javascript" src="../js/app.js" defer></script>
+    <script type="text/javascript" src="../js/controllers.js" defer></script>
+    <script type="text/javascript" src="../js/model.js" defer></script>
+</head>
+<body>
+    <div id="about"> v 0.2.0 </div>
+    <div id="input_row">
+        <input type="text" id="fluency_files" value="/Users/jcz/Dropbox/projects/semnet/snafu/results_cleaned.csv">
+		<input type="hidden" id="fluency_dir" value="">
+        <input type="button" id="choose_file" value="Browse">
+        <input type="file" id="real_choose_file"> <!-- easy hack to style file select -->
+        <input type="button" id="loaddata" value="Load data"> 
+        <div id="subj_and_category">
+            Subject:
+            <select id="subj" rv-value="data_parameters.subject">
+                <option rv-each-subject="data_parameters.subjects">{ subject }</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Category:
+            <select id="category" rv-value="data_parameters.category">
+                <option rv-each-category="data_parameters.categories">{ category }</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Reset" id="reset">
+            <img src="../img/loading.gif" id="loading">
+        </div>
+    </div>
+    <div id="data_row">
+        <div id="data_parameters" class="box">
+            <table>
+                <tr>
+                    <th>Data Parameters</th>
+                    <th><input type="button" value="Calculate Data Properties" id="calculate_data_properties" rv-enabled="data_parameters.filename"></th>
+                </tr>
+                <tr>
+                    <td>Cluster scheme</td>
+                    <td><select id="cluster_scheme" rv-value="data_parameters.cluster_scheme">
+                            <option rv-each-cluster_scheme="data_parameters.cluster_schemes">{ cluster_scheme }</option>
+                        </select></td>
+                </tr><tr>
+                    <td>Cluster type</td>
+                    <td><select id="cluster_type" rv-value="data_parameters.cluster_type">
+                            <option rv-each-cluster_type="data_parameters.cluster_types">{ cluster_type }</option>
+                        </select></td>
+                </tr>
+            </table>
+        </div>
+        <div id="data_properties" class="box">
+            <table>
+                <tr> <th colspan="2">Data Properties</th> </tr>
+                <tr>
+                    <td>Number of lists</td>
+                    <td>{ data_properties.num_lists }</td>
+                </tr>
+                <tr>
+                    <td>Avg number of items listed</td>
+                    <td>{ data_properties.avg_items_listed | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg number of unique items listed</td>
+                    <td>{ data_properties.avg_unique_items_listed | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg number of cluster switches</td>
+                    <td>{ data_properties.avg_num_cluster_switches | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg cluster length</td>
+                    <td>{ data_properties.avg_cluster_size | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg number of intrusions</td>
+                    <td>{ data_properties.avg_num_intrusions | trunc }
+                        <a rv-if="data_properties.avg_num_intrusions" id="intrusion_list" href="#">(list)</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Avg number of perseverations</td>
+                    <td>{ data_properties.avg_num_perseverations | trunc }
+                        <a rv-if="data_properties.avg_num_perseverations" id="perseveration_list" href="#">(list)</a>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    <div id="network_row">
+        <div id="network_parameters" class="box">
+            <table>
+                <tr>
+                    <th>Network Parameters</th>
+                    <th><input type="button" value="Generate Network" id="generate_network" rv-enabled="data_parameters.filename"></th>
+                </tr>
+                <tr>
+                    <td>Network method</td>
+                    <td><select id="network_method" rv-value="network_parameters.network_method">
+                            <option rv-each-network_method="network_parameters.network_methods">{ network_method }</option>
+                        </select></td>
+                </tr>
+            </table>
+        </div>
+        <div id="network_properties" class="box">
+            <table>
+                <tr>
+                    <th>Network Properties</th>
+                    <th><input type="button" value="View Network" id="view_network" rv-enabled="network_properties.graph"></th>
+                </tr>
+                <tr>
+                    <td>Avg node degree</td>
+                    <td>{ network_properties.node_degree | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Clustering coefficient</td>
+                    <td>{ network_properties.clustering_coefficient | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg shortest path length</td>
+                    <td>{ network_properties.aspl | trunc }</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

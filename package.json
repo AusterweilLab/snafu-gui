@@ -1,0 +1,11 @@
+{
+    "name":"semnet",
+    "main":"html/index_standalone.html",
+    "window": {
+        "frame": true,
+        "fullscreen": false,
+        "width": 1100,
+        "height": 600
+    }      
+}
+
