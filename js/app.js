@@ -19,7 +19,7 @@ pyshell.on('message', function (message) {
     messagetype = message.type;
     delete message.type;        // don't store return type in data/network properties
     if (messagetype == "data_properties") {
-        delete data_properties.perseverations;      // these two properties may not get overwritten
+        delete data_properties.perseverations;      // these two properties may not get overwritten by Object.assign
         delete data_properties.intrusions;
         Object.assign(data_properties, message);
     } else if (messagetype == "network_properties") {
