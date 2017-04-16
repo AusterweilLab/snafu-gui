@@ -1,6 +1,6 @@
 data_parameters = { 
     "cluster_types": ["fluid", "static"],
-    "cluster_schemes": ["Troyer-Hills", "Troyer-Hills-Zemla"],
+    "cluster_schemes": ["Troyer","Troyer-Hills", "Troyer-Hills-Zemla"],
     "subjects": [],
     "categories": [],
 
@@ -14,8 +14,8 @@ data_parameters = {
 }
 
 network_parameters = {
-    "network_methods": ["RW", "U-INVITE"],
-    "network_method": "RW"
+    "network_methods": ["RW", "U-INVITE", "Goni"],
+    "network_method": "U-INVITE"
 }
 
 data_properties = { }
@@ -23,7 +23,7 @@ network_properties = { }
 
 // Rivets formatters
 rivets.formatters.trunc = function(value){
-  return Math.round(value * 100) / 100
+  return Math.round(value * 1000) / 1000
 }
 
 var data_parameters_rvs = rivets.bind($('#data_parameters'), { data_parameters: data_parameters });

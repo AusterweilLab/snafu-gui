@@ -32,24 +32,12 @@ African,okapi
 African,oryx
 African,ostrich
 African,panther
-African,rhino
 African,rhinoceros
 African,steenbok
 African,tiger
 African,warthog
 African,wildebeest
 African,zebra
-UsedForFur,alpaca
-UsedForFur,beaver
-UsedForFur,chamois
-UsedForFur,chinchilla
-UsedForFur,ermine
-UsedForFur,fox
-UsedForFur,llama
-UsedForFur,mink
-UsedForFur,rabbit
-UsedForFur,sable
-UsedForFur,vicuna
 Arctic,arctic fox
 Arctic,auk
 Arctic,caribou
@@ -70,7 +58,6 @@ Australian,kiwi
 Australian,koala
 Australian,possum
 Australian,platypus
-Australian,possum
 Australian,sugar glider
 Australian,tasmanian devil
 Australian,wallaby
@@ -192,6 +179,11 @@ Bird,turkey
 Bird,vulture
 Bird,woodpecker
 Bird,wren
+Bird,baldeagle
+Bird,blackheadedgull
+Bird,goldeneagle
+Bird,lovebird
+Bird,sunconure
 Bovine,bison
 Bovine,buffalo
 Bovine,bullock
@@ -235,6 +227,8 @@ Canine,terrier
 Canine,timber wolf
 Canine,wild dog
 Canine,wolf
+Canine,beagle
+Canine,wolfhound
 Deers,blacktailed deer
 Deers,buck
 Deers,caribou
@@ -253,6 +247,9 @@ Deers,roe
 Deers,stag
 Deers,whitetailed deer
 Deers,wildebeest
+Deers,muskdeer
+Dinosaur,raptor
+Canine,germanshepherd
 Farm,ass
 Farm,billygoat
 Farm,bronco
@@ -293,14 +290,13 @@ Feline,bobcat
 Feline,bull
 Feline,cat
 Feline,cheetah
-Feline,cougar
 Feline,crane
 Feline,jaguar
 Feline,leopard
 Feline,liger
 Feline,lion
 Feline,lynx
-Feline,mountainlion
+Feline,mountain lion
 Feline,ocelot
 Feline,panther
 Feline,puma
@@ -310,8 +306,9 @@ Feline,snow
 Feline,lion
 Feline,tiger
 Feline,tomcat
-Feline,whitetiger
+Feline,white tiger
 Feline,wildcat
+Feline,persian
 Fish,angelfish
 Fish,arrowhead shark
 Fish,barracuda
@@ -357,6 +354,9 @@ Fish,trout
 Fish,tuna
 Fish,whale
 Fish,shark
+Fish,cod
+Fish,humunukuapua
+Fish,pufferfish
 Insectivores,aardvark
 Insectivores,anteater
 Insectivores,armadillo
@@ -365,52 +365,56 @@ Insectivores,echidna
 Insectivores,hedgehog
 Insectivores,mole
 Insectivores,shrew
-Insectivores,Insects: ant
-Insectivores,antlion
-Insectivores,aphid
-Insectivores,bee
-Insectivores,beetle
-Insectivores,blackwidow
-Insectivores,bug
-Insectivores,butterfly
-Insectivores,caterpillar
-Insectivores,centipede
-Insectivores,cicada
-Insectivores,cockroach
-Insectivores,cricket
-Insectivores,daddy long legs
-Insectivores,dolphin
-Insectivores,dragonfly
-Insectivores,earthworm
-Insectivores,flea
-Insectivores,fly
-Insectivores,gnat
-Insectivores,grasshopper
-Insectivores,grub
-Insectivores,honeybee
-Insectivores,hornet
-Insectivores,insect
-Insectivores,June beetle
-Insectivores,ladybug
-Insectivores,larva
-Insectivores,leafy
-Insectivores,louse
-Insectivores,maggot
-Insectivores,mealworm
-Insectivores,mite
-Insectivores,monarch butterfly
-Insectivores,mosquito
-Insectivores,moth
-Insectivores,pill bug
-Insectivores,praying mantis
-Insectivores,scorpion
-Insectivores,stick insect
-Insectivores,tarantula
-Insectivores,termite
-Insectivores,tick
-Insectivores,wasp
-Insectivores,worm
-Insectivores,yellow jacket
+Insects,ant
+Insects,antlion
+Insects,aphid
+Insects,bee
+Insects,beetle
+Insects,blackwidow
+Insects,bug
+Insects,butterfly
+Insects,caterpillar
+Insects,centipede
+Insects,cicada
+Insects,cockroach
+Insects,cricket
+Insects,daddy long legs
+Insects,dolphin
+Insects,dragonfly
+Insects,earthworm
+Insects,flea
+Insects,fly
+Insects,gnat
+Insects,grasshopper
+Insects,grub
+Insects,honeybee
+Insects,hornet
+Insects,insect
+Insects,June beetle
+Insects,ladybug
+Insects,larva
+Insects,leafy
+Insects,louse
+Insects,maggot
+Insects,mealworm
+Insects,mite
+Insects,monarch butterfly
+Insects,mosquito
+Insects,moth
+Insects,pill bug
+Insects,mantis
+Insects,scorpion
+Insects,stick insect
+Insects,tarantula
+Insects,termite
+Insects,tick
+Insects,wasp
+Insects,worm
+Insects,yellow jacket
+Insects,bumblebee
+Insects,cranefly
+Insects,dungbeetle
+Mythical,basilisk
 NorthAmerican,badger
 NorthAmerican,bear
 NorthAmerican,beaver
@@ -422,7 +426,6 @@ NorthAmerican,bobcat
 NorthAmerican,brown bear
 NorthAmerican,caribou
 NorthAmerican,chipmunk
-NorthAmerican,cougar
 NorthAmerican,cub
 NorthAmerican,deer
 NorthAmerican,elk
@@ -432,6 +435,7 @@ NorthAmerican,kodiak
 NorthAmerican,bear
 NorthAmerican,moose
 NorthAmerican,mountain goat
+NorthAmerican,cougar
 NorthAmerican,mountain lion
 NorthAmerican,puma
 NorthAmerican,rabbit
@@ -439,6 +443,7 @@ NorthAmerican,raccoon
 NorthAmerican,skunk
 NorthAmerican,squirrel
 NorthAmerican,wolf
+NorthAmerican,baldeagle
 Pets,budgie
 Pets,canary
 Pets,cat
@@ -459,6 +464,10 @@ Pets,parrot
 Pets,poodle
 Pets,puppy
 Pets,rabbit
+Pets,beagle
+Pets,bluerussian
+Pets,wolfhound
+Pets,germanshepherd
 Primates,ape
 Primates,baboon
 Primates,bonobo
@@ -523,6 +532,8 @@ ReptileAmphibian,turtle
 ReptileAmphibian,velociraptor
 ReptileAmphibian,viper
 ReptileAmphibian,watersnake
+ReptileAmphibian,gilamonster
+ReptileAmphibian,thornydevil
 Rodents,agouti
 Rodents,beaver
 Rodents,black squirrel
@@ -552,6 +563,17 @@ Rodents,rodent
 Rodents,shrew
 Rodents,squirrel
 Rodents,woodchuck
+UsedForFur,alpaca
+UsedForFur,beaver
+UsedForFur,chamois
+UsedForFur,chinchilla
+UsedForFur,ermine
+UsedForFur,fox
+UsedForFur,llama
+UsedForFur,mink
+UsedForFur,rabbit
+UsedForFur,sable
+UsedForFur,vicuna
 Water,alga
 Water,alligator
 Water,anemone
@@ -577,8 +599,7 @@ Water,goose
 Water,hammerhead shark
 Water,humpback whale
 Water,jellyfish
-Water,killer
-Water,whale
+Water,killer whale
 Water,leech
 Water,limpet
 Water,lobster
@@ -617,6 +638,12 @@ Water,toad
 Water,turtle
 Water,urchin
 Water,whale
+Water,boxturtle
+Water,seacow
+Water,sealion
+Water,seaturtle
+Water,skate
+Water,snappingturtle
 Weasels,badger
 Weasels,ferret
 Weasels,groundhog
@@ -630,4 +657,14 @@ Weasels,otter
 Weasels,skunk
 Weasels,stoat
 Weasels,weasel
-Weasels,wolverine
+Weasels,wolverine
+Asian,ibex
+Asian,argali
+Unknown,bluejacket
+Weasels,civet
+NorthAmerican,opossum
+Asian,panda
+Asian,red panda
+Jungle,sloth
+Primates,slowloris
+Jungle,tapir
