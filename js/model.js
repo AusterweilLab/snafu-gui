@@ -1,6 +1,7 @@
 data_parameters = { 
     "cluster_types": ["fluid", "static"],
     "cluster_schemes": ["Troyer","Troyer-Hills", "Troyer-Hills-Zemla"],
+    "spellfiles": ["None","Zemla"],
     "subjects": [],
     "categories": [],
 
@@ -9,6 +10,7 @@ data_parameters = {
 	"fullpath": "",
     "subject": "",
     "category": "",
+    "spellfile": "Zemla",
     "cluster_type": "fluid",
     "cluster_scheme": "Troyer-Hills"
 }

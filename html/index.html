@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../js/model.js" defer></script>
 </head>
 <body>
-    <div id="about"> v 0.2.0 </div>
+    <div id="about"> v 0.3.0 </div>
     <div id="input_row">
         <input type="text" id="fluency_files" value="results_cleaned.csv">
 		<input type="hidden" id="fluency_dir" value="../uploads/">
@@ -40,6 +40,12 @@
                     <th>Data Parameters</th>
                     <th><input type="button" value="Calculate Data Properties" id="calculate_data_properties" rv-enabled="data_parameters.filename"></th>
                 </tr>
+                <tr>
+                    <td>Spellcorrect file</td>
+                    <td><select id="spellfile" rv-value="data_parameters.spellfile">
+                            <option rv-each-spellfile="data_parameters.spellfiles">{ spellfile }</option>
+                        </select></td>
+                </tr><tr>
                 <tr>
                     <td>Cluster scheme</td>
                     <td><select id="cluster_scheme" rv-value="data_parameters.cluster_scheme">
