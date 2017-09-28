@@ -1,0 +1,43 @@
+2017-09-28 13:35:28,488 ERROR SNAFU failed with Python error: [Errno 2] No such file or directory: '/../snet/USF_animal_subset.snet'
+2017-09-28 13:38:28,640 ERROR SNAFU failed with Python error: No JSON object could be decoded
+2017-09-28 13:38:41,656 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
+2017-09-28 13:43:25,064 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
+2017-09-28 13:43:53,640 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
+2017-09-28 13:45:56,540 ERROR SNAFU failed with Python error: No JSON object could be decoded
+2017-09-28 13:46:57,927 ERROR JSON No JSON object could be decoded
+2017-09-28 14:50:46,303 ERROR JSON No JSON object could be decoded
+2017-09-28 14:51:34,325 ERROR JSON No JSON object could be decoded
+2017-09-28 14:52:34,539 ERROR JSON No JSON object could be decoded
+2017-09-28 14:53:17,874 ERROR JSON No JSON object could be decoded
+2017-09-28 14:53:45,212 ERROR JSON No JSON object could be decoded
+2017-09-28 14:53:56,117 ERROR JSON No JSON object could be decoded
+2017-09-28 14:54:44,235 ERROR JSON No JSON object could be decoded
+2017-09-28 14:56:17,494 ERROR JSON No JSON object could be decoded
+2017-09-28 15:01:06,216 ERROR JSON No JSON object could be decoded
+2017-09-28 15:29:14,472 ERROR JSON No JSON object could be decoded
+2017-09-28 15:30:11,721 ERROR JSON No JSON object could be decoded
+2017-09-28 15:31:49,093 ERROR JSON No JSON object could be decoded
+2017-09-28 15:32:21,884 ERROR JSON No JSON object could be decoded
+2017-09-28 15:32:35,996 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
+2017-09-28 15:36:45,759 ERROR JSON No JSON object could be decoded
+2017-09-28 15:37:08,175 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
+2017-09-28 15:37:14,049 ERROR UNKNOWN coercing to Unicode: need string or buffer, int found
+2017-09-28 15:38:04,891 ERROR JSON No JSON object could be decoded
+2017-09-28 15:38:19,297 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
+2017-09-28 15:40:25,035 ERROR JSON No JSON object could be decoded
+2017-09-28 15:43:05,154 ERROR JSON No JSON object could be decoded
+2017-09-28 15:50:01,050 ERROR JSON No JSON object could be decoded
+2017-09-28 15:53:41,989 ERROR JSON No JSON object could be decoded
+2017-09-28 16:01:04,118 ERROR JSON No JSON object could be decoded
+2017-09-28 16:05:27,555 ERROR JSON No JSON object could be decoded
+2017-09-28 16:06:08,944 ERROR JSON No JSON object could be decoded
+2017-09-28 16:06:47,344 ERROR JSON No JSON object could be decoded
+2017-09-28 16:08:22,484 ERROR JSON No JSON object could be decoded
+2017-09-28 16:10:40,452 ERROR JSON No JSON object could be decoded
+2017-09-28 16:11:31,076 ERROR JSON No JSON object could be decoded
+2017-09-28 16:12:20,220 ERROR JSON No JSON object could be decoded
+2017-09-28 16:13:12,692 ERROR JSON No JSON object could be decoded
+2017-09-28 16:15:50,397 ERROR JSON No JSON object could be decoded
+2017-09-28 16:22:54,744 ERROR JSON No JSON object could be decoded
+2017-09-28 16:23:39,619 ERROR JSON No JSON object could be decoded
+2017-09-28 16:24:30,323 ERROR JSON No JSON object could be decoded

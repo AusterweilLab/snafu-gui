@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../js/model.js" defer></script>
 </head>
 <body>
-    <div id="about"> v 0.3.0 </div>
+    <div id="about"> v 0.3.1 </div>
     <div id="input_row">
         <input type="text" id="fluency_files" value="results_cleaned.csv">
 		<input type="hidden" id="fluency_dir" value="../uploads/">
@@ -111,6 +111,12 @@
                             <option rv-each-network_method="network_parameters.network_methods">{ network_method }</option>
                         </select></td>
                 </tr>
+                <tr>
+                    <td>Prior</td>
+                    <td><select id="prior" rv-value="network_parameters.prior">
+                            <option rv-each-prior="network_parameters.priors">{ prior }</option>
+                        </select></td>
+                </tr>                
             </table>
         </div>
         <div id="network_properties" class="box">

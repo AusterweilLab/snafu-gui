@@ -3,9 +3,7 @@ body {
     background-color: #dddddd;
 }
 
-#fluency_files {
-    width: 350px;
-}
+#fluency_files { width: 350px; }
 
 .box {
     width: 48%;
@@ -27,6 +25,7 @@ body {
 
 #data_parameters, #network_parameters {
     float: left;
+    overflow-y: scroll;
 }
 
 #data_properties, #network_properties {
@@ -54,15 +53,17 @@ table {
     width: 100%;
 }
 
-input:disabled {
+input:disabled, select:disabled {
     color: #999;
 }
 
-#real_choose_file {
-    display: none;
-}
+#real_choose_file, #real_export_network { display: none; }
 
 #loading {
     width: 40px;
     visibility: hidden;
+}
+
+input[type="number"] {
+    width: 50px;
 }

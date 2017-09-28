@@ -49,6 +49,25 @@ $("#view_network").click(function() {
         "width": 1000});
 });
 
+$("#export_network").click(function() {
+    $("#real_export_network").click();
+});
+
+$("#real_export_network").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+        fs.writeFile(filename, JSON.stringify(network_properties.graph), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+
+    var filename = $(this).val();
+    saveFile(filename);
+});
+
 $("#intrusion_list").click(function(e) {
     e.preventDefault();
     openwindow("intrusions.html", {
