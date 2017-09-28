@@ -17,7 +17,9 @@ data_parameters = {
 
 network_parameters = {
     "network_methods": ["RW", "U-INVITE", "Goni"],
-    "network_method": "U-INVITE"
+    "network_method": "U-INVITE",
+    "priors": ["None", "USF"],
+    "prior": "None"
 }
 
 data_properties = { }
