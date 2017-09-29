@@ -116,14 +116,52 @@
                     <td><select id="prior" rv-value="network_parameters.prior">
                             <option rv-each-prior="network_parameters.priors">{ prior }</option>
                         </select></td>
-                </tr>                
+                </tr>  
+                <tr>
+                    <td>Starting graph</td>
+                    <td><select id="starting_graph" rv-value="network_parameters.starting_graph">
+                            <option rv-each-starting_graph="network_parameters.starting_graphs">{ starting_graph }</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Goñi window size</td>
+                    <td rv-value="network_parameters.goni_windowsize"><input type="number" min="1" id="goni_windowsize" rv-value="network_parameters.goni_windowsize"></td>
+                </tr>
+                <tr>
+                    <td>Goñi threshold</td>
+                    <td rv-value="network_parameters.goni_threshold"><input type="number" min="1" id="goni_threshold" rv-value="network_parameters.goni_threshold"></td>
+                </tr>
+                <tr>
+                    <td>First list item</td>
+                    <td><select id="first_items" rv-value="network_parameters.first_item">
+                            <option rv-each-first_item="network_parameters.first_items">{ first_item }</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Jump type</td>
+                    <td><select id="jump_types" rv-value="network_parameters.jump_type">
+                            <option rv-each-jump_type="network_parameters.jump_types">{ jump_type }</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Jump probability</td>
+                    <td rv-value="network_parameters.jump_probability"><input type="number" min=0.0 max=1.0 step="0.01" id="jump_probability" rv-value="network_parameters.jump_probability"></td>
+                </tr>
+                <tr>
+                    <td>Priming probability</td>
+                    <td rv-value="network_parameters.priming_probability"><input type="number" min="0.0" max="1.0" step="0.01" id="priming_probability" rv-value="network_parameters.priming_probability"></td>
+                </tr>
             </table>
         </div>
         <div id="network_properties" class="box">
             <table>
                 <tr>
                     <th>Network Properties</th>
-                    <th><input type="button" value="View Network" id="view_network" rv-enabled="network_properties.graph"></th>
+                    <th>
+                        <input type="button" value="View" id="view_network" rv-enabled="network_properties.graph">
+                        <input type="button" id="export_network" value="Export" rv-enabled="network_properties.graph">
+                        <input type="file" id="real_export_network" nwsaveas="network.json"> <!-- easy hack to style file select -->
+                    </th>
                 </tr>
                 <tr>
                     <td>Avg node degree</td>
