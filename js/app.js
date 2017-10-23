@@ -6,6 +6,9 @@ win.showDevTools()
 var PythonShell = require('python-shell');
 var pyshell = new PythonShell('py/interface.py', { mode: 'text' });
 
+//var pyapp = require('../js/openinterface')
+//var asd = pyapp.init()
+
 // wrapper to send command but also display loading gif
 function pysend(command) {
     command = JSON.stringify(command);

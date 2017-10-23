@@ -4,28 +4,28 @@ module.exports = {
 
     init: function() {
         var spawn = require('child_process').spawn;
-        var ok = spawn('./py/dist/interface.app/Contents/MacOS/interface');
+        var pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface');
 
-        ok.stdout.on('data', function(data) {
+        pyapp.stdout.on('data', function(data) {
             console.log(data.toString());
         });
        
-        ok.stdout.on('end', function(data) {
+        pyapp.stdout.on('end', function(data) {
             console.log("END");
         });
 
-        ok.stderr.on('data', function(data) {
+        pyapp.stderr.on('data', function(data) {
             console.log("ERR");
         });
 
-        ok.stdin.write("test\n");
-        ok.kill()
-        return py;
+        //pyapp.stdin.write("init successful,\n");
+        //pyapp.kill()
+        return pyapp;
     },
 
-    exec: function(py, data) {
-        py.stdin.write(JSON.stringify(data));
-        py.stdin.end();
+    exec: function(pyapp, data) {
+        pyapp.stdin.write(JSON.stringify(data));
+        //pyapp.stdin.end();
     },
        
     test: function() { return "hello world"; }

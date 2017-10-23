@@ -19,7 +19,9 @@ body {
 }
 
 #data_row, #network_row {
-    width: 1000px;
+    /* width: 1000px; */
+    min-width: 1000px;
+    width: 90%;
     clear: both;
 }
 
@@ -66,4 +68,17 @@ input:disabled, select:disabled {
 
 input[type="number"] {
     width: 50px;
+}
+
+
+/* mac os hides scrollbars which is confusing. let's add them back. */
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
