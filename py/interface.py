@@ -1,5 +1,5 @@
 import sys, json
-import rw as rw
+import rw
 import numpy as np
 import networkx as nx
 import logging
