@@ -1,18 +1,20 @@
 data_parameters = { 
     "cluster_types": ["fluid", "static"],
     "cluster_schemes": ["Troyer","Troyer-Hills", "Troyer-Hills-Zemla"],
-    "spellfiles": ["None","Zemla"],
+    "spellfiles": ["None","Zemla","Lange","LangeSpanish"],
     "subjects": [],
+    "groups": [],
     "categories": [],
-
-	"dir": "",
+	"factor_type": "subject",
+    "dir": "",
 	"filename": "",
 	"fullpath": "",
     "subject": "",
+    "group": "",
     "category": "",
-    "spellfile": "Zemla",
+    "spellfile": "Lange",
     "cluster_type": "fluid",
-    "cluster_scheme": "Troyer-Hills"
+    "cluster_scheme": "Troyer-Hills-Zemla"
 }
 
 network_parameters = {
@@ -36,8 +38,16 @@ data_properties = { }
 network_properties = { }
 
 // Rivets formatters
-rivets.formatters.trunc = function(value){
-  return Math.round(value * 1000) / 1000
+rivets.formatters.trunc = function(value) {
+    if (Number(value) == value) {
+        return Math.round(value * 1000) / 1000;
+    } else {
+        return value;
+    }
+}
+
+rivets.formatters.eq = function(value, arg) {
+  return value == arg;
 }
 
 var data_parameters_rvs = rivets.bind($('#data_parameters'), { data_parameters: data_parameters });

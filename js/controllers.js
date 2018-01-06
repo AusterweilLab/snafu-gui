@@ -13,7 +13,7 @@ $("#real_choose_file").change(function() {
 $("#loaddata").click(function() {
 	data_parameters.dir = $("#fluency_dir").val();
     data_parameters.filename = $("#fluency_files").val();
-	data_parameters.fullpath = data_parameters.dir + data_parameters.filename;
+	data_parameters.fullpath = data_parameters.dir + "/" + data_parameters.filename;
     command = { "type": "list_subjects_and_categories",
                 "fullpath": data_parameters.fullpath
               }
@@ -28,6 +28,8 @@ $("#reset").click(function() {
 });
 
 $("#calculate_data_properties").click(function() {
+    data_properties = {};
+    data_properties_rvs.update({ data_properties: data_properties });
     command = { "type": "data_properties",
                 "data_parameters": data_parameters
               }
@@ -35,6 +37,8 @@ $("#calculate_data_properties").click(function() {
 });
 
 $("#generate_network").click(function() {
+    network_properties = {};
+    network_properties_rvs.update({ network_properties: network_properties });
     command = { "type": "network_properties",
                 "data_parameters": data_parameters,
                 "network_parameters": network_parameters

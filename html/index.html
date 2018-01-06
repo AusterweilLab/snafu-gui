@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../js/model.js" defer></script>
 </head>
 <body>
-    <div id="about"> v 0.3.1 </div>
+    <div id="about"> v 0.4.0 </div>
     <div id="input_row">
         <input type="text" id="fluency_files" value="results_cleaned.csv">
 		<input type="hidden" id="fluency_dir" value="../uploads/">
@@ -19,10 +19,19 @@
         <input type="file" id="real_choose_file"> <!-- easy hack to style file select -->
         <input type="button" id="loaddata" value="Load data"> 
         <div id="subj_and_category">
-            Subject:
-            <select id="subj" rv-value="data_parameters.subject">
+
+            <div id="factor_select">
+                <input type="radio" name="factor_type" rv-checked="data_parameters.factor_type" value="subject" checked="checked">Subject</input><br>
+                <input type="radio" name="factor_type" rv-checked="data_parameters.factor_type" value="group">Group</input>
+            </div>
+            
+            <select id="subj" rv-value="data_parameters.subject" rv-show="data_parameters.factor_type | eq 'subject'">
                 <option rv-each-subject="data_parameters.subjects">{ subject }</option>
             </select>
+            <select id="group" rv-value="data_parameters.group" rv-show="data_parameters.factor_type | eq 'group'">
+                <option rv-each-group="data_parameters.groups">{ group }</option>
+            </select>
+            
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Category:
             <select id="category" rv-value="data_parameters.category">
@@ -31,6 +40,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="Reset" id="reset">
             <img src="../img/loading.gif" id="loading">
+            <a href="help.html"><img src="../img/question.png" id="question"></a>
         </div>
     </div>
     <div id="data_row">
@@ -124,11 +134,11 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td>Goñi window size</td>
+                    <td>Goni window size</td>
                     <td rv-value="network_parameters.goni_windowsize"><input type="number" min="1" id="goni_windowsize" rv-value="network_parameters.goni_windowsize"></td>
                 </tr>
                 <tr>
-                    <td>Goñi threshold</td>
+                    <td>Goni threshold</td>
                     <td rv-value="network_parameters.goni_threshold"><input type="number" min="1" id="goni_threshold" rv-value="network_parameters.goni_threshold"></td>
                 </tr>
                 <tr>

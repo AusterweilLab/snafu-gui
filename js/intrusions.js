@@ -2,7 +2,7 @@
 var intrusions = window.opener.data_properties.intrusions;
 intrusions.forEach(function(list, listindex) {
     if (list.length > 0) {
-        document.write("<span class='listnum'>List "+listindex+"</span>");
+        document.write("<span class='listnum'>List "+(listindex+1)+"</span>");
     }
     list.forEach(function(item) {
         document.write(item + "<br>");
