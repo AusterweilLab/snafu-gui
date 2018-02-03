@@ -8,12 +8,13 @@ $("#choose_file").click(function() {
 $("#real_choose_file").change(function() {
     var selected_file = $(this).val();
     $("#fluency_files").val(selected_file);
+    $("#fluency_dir").val("");
 });
 
 $("#loaddata").click(function() {
 	data_parameters.dir = $("#fluency_dir").val();
     data_parameters.filename = $("#fluency_files").val();
-	data_parameters.fullpath = data_parameters.dir + "/" + data_parameters.filename;
+    data_parameters.fullpath = data_parameters.dir + "/" + data_parameters.filename;
     command = { "type": "list_subjects_and_categories",
                 "fullpath": data_parameters.fullpath
               }
@@ -72,7 +73,18 @@ $("#real_export_network").change(function() {
     saveFile(filename);
 });
 
-$("#intrusion_list").click(function(e) {
+$("#question").click(function() {
+    openwindow("help.html", {
+        "title": "Help",
+        "height": 600,
+        "width": 600});
+});
+
+// $("#intrusion_list").click() used to work and now it doesn't. 
+// #something to do with the element being hidden on start, but not sure why it used to work
+// https://stackoverflow.com/a/11050439/353278
+
+$("body").on("click","#intrusion_list",function(e) {
     e.preventDefault();
     openwindow("intrusions.html", {
         "title": "Intrusion list",
@@ -80,7 +92,7 @@ $("#intrusion_list").click(function(e) {
         "width": 300});
 });
 
-$("#perseveration_list").click(function(e) {
+$("body").on("click","#perseveration_list",function(e) {
     e.preventDefault();
     openwindow("perseverations.html", {
         "title": "Perseveration list",

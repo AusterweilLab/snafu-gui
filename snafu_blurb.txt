@@ -1,0 +1,19 @@
+SNAFU: The Semantic Network and Fluency Utility
+
+The semantic fluency task (listing items within a category) is frequently used
+in psychology by both reseachers and clinicians. Analysis of fluency
+data is often done by hand, which is time-consuming and error prone. SNAFU
+automates the computation of many commonly used metrics, including counting
+perseverations, cluster size, switch count, and more.
+
+In recent years, semantic fluency data has been used by many researchers to
+infer the mental organization of semantic categories, such as animals. SNAFU
+implements many algorithms that use fluency data to construct semantic
+networks, a representation of how category members are organized within the
+mind. SNAFU will compute several basic network measures (e.g., average node
+degree, others) on these representations, and allow researchers to export these
+networks for additional analysis.
+
+SNAFU is intended primarily for research psychologists who wish to analyze
+fluency data and compare the semantic networks of different groups or
+individuals.

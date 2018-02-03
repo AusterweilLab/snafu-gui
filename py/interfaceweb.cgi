@@ -1,32 +1,32 @@
-#!/usr/bin/python
+#!/usr/local/bin/python
 
-import sys, json
+import sys, json, os
 import rw
 import numpy as np
 import networkx as nx
 import cgi
-import logging
+from pathlib import Path
+#import logging
 
-# logging doesn't work for web version... write permission issues??
-
-# log errors for debugging
-# https://stackoverflow.com/questions/4690600/python-exception-message-capturing
-#logger = logging.getLogger('snafu')
-#hdlr = logging.FileHandler('error.log')
-#formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-#hdlr.setFormatter(formatter)
-#logger.addHandler(hdlr)
-#logger.setLevel(logging.INFO)
-# Use logger.info('stuff') to record non-errors
+# get SNAFU root path
+root_path = str(Path(os.getcwd()).parent)
 
 def main(command):
     if 'type' in command.keys():
-        if command['type'] in dir(rw.gui):
+        if command['type'] == "directory_listing":
+            if command['folder'] == "schemes":
+                files = [i[0:i.find(".csv")].replace("_"," ") for i in os.listdir('../schemes/') if ".csv" in i]
+                response = {"type": "directory_listing", "cluster_schemes": files}
+            elif command['folder'] == "spellfiles":
+                files = [i[0:i.find(".csv")].replace("_"," ") for i in os.listdir('../spellfiles/') if ".csv" in i]
+                response = {"type": "directory_listing", "spellfiles": files}
+            else:
+                response = rw.gui.error("Unknown error in function: " + command['type'])
+        elif command['type'] in dir(rw.gui):
             try:
-                response = getattr(rw.gui, command['type'])(command)
+                response = getattr(rw.gui, command['type'])(command, root_path)
             except:
                 response = rw.gui.error("Unknown error in function: " + command['type']) # + ", see error.log for more details")
-                logger.error('UNKNOWN ' + str(e))
         else:
             response = rw.gui.error("Invalid command: " + command['type'])
     else:

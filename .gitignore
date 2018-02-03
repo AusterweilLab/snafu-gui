@@ -1,3 +1,9 @@
-py/build
-py/dist
+snafu_demo_video.mov
+dist/
+py/build/
+py/dist/
 py/rw
+node_modules/nwjs-builder-phoenix/
+bfg.jar
+snet/dedyne.snet
+py/.eggs/

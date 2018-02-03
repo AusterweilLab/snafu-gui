@@ -1,32 +1,39 @@
 // with help from http://www.sohamkamani.com/blog/2015/08/21/python-nodejs-comm/
 
+// why should i need to pass `console` to these functions? that's dumb!
+// see: https://github.com/nwjs/nw.js/issues/196
+
 module.exports = {
 
-    init: function() {
+    init: function(console) {
+        console.log("PyApp init successful");
         var spawn = require('child_process').spawn;
-        var pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface');
+        var instance = spawn('./py/dist/interface.app/Contents/MacOS/interface');
 
-        pyapp.stdout.on('data', function(data) {
-            console.log(data.toString());
+        instance.stdout.on('data', function(data) {
+            //console.log(data.toString());
+            pyreplace(data.toString());
         });
        
-        pyapp.stdout.on('end', function(data) {
+        instance.stdout.on('end', function(data) {
             console.log("END");
         });
 
-        pyapp.stderr.on('data', function(data) {
+        instance.stderr.on('data', function(data) {
             console.log("ERR");
         });
 
-        //pyapp.stdin.write("init successful,\n");
-        //pyapp.kill()
-        return pyapp;
+        //instance.kill()
+        return instance;
     },
 
-    exec: function(pyapp, data) {
-        pyapp.stdin.write(JSON.stringify(data));
-        //pyapp.stdin.end();
+    exec: function(console, instance, data) {
+        instance.stdin.write(data + "\n");
+        //instance.stdin.end();    // This should be called when nwjs is closed so that interface socket doesn't stay open or cause error
     },
        
-    test: function() { return "hello world"; }
+    test: function(console) { 
+        console.log("hello");
+        return "goodbye"; 
+    }
 };

@@ -1,18 +1,35 @@
-import sys, json
+import sys, json, os
 import rw
 import numpy as np
 import networkx as nx
 import logging
+from pathlib import Path
 
+if sys.argv[1] == "nwjs-app":
+    py2app = 1
+else:
+    py2app = 0          # is interface.py compiled with py2app?
+
+log_errors = 1      # do you want to log errors?
+
+# get SNAFU root path
+root_path = Path(os.getcwd())
+if py2app:
+    root_path = root_path.parent.parent.parent.parent.parent
+root_path = str(root_path)
+
+
+if log_errors:
 # log errors for debugging
-# https://stackoverflow.com/questions/4690600/python-exception-message-capturing
-logger = logging.getLogger('snafu')
-hdlr = logging.FileHandler('error.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr)
-logger.setLevel(logging.INFO)
-# Use logger.info('stuff') to record non-errors
+    # does not work for py2app or web versions!
+    # https://stackoverflow.com/questions/4690600/python-exception-message-capturing
+    logger = logging.getLogger('snafu')
+    hdlr = logging.FileHandler(root_path + '/error.log')
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.INFO)
+    # Use logger.info('stuff') to record non-errors
         
 def main():
     exit_status = 0
@@ -24,10 +41,13 @@ def main():
             if 'type' in command.keys():
                 if command['type'] in dir(rw.gui):
                     try:
-                        response = getattr(rw.gui, command['type'])(command)
+                        response = getattr(rw.gui, command['type'])(command, root_path)
                     except Exception, e:
-                        response = rw.gui.error("Unknown error in function: " + command['type'] + ", see error.log for more details")
-                        logger.error('UNKNOWN ' + str(e))
+                        error_msg = "Unknown error in function: " + command['type']
+                        if log_errors:
+                            error_msg += ", see error.log for more details"
+                            logger.error('UNKNOWN ' + str(e))
+                        response = rw.gui.error(error_msg)
                     if command['type'] == "quit":
                         exit_status = 1
                 else:
@@ -35,8 +55,12 @@ def main():
             else:
                 response = rw.gui.error("No command specified")
         except Exception, e:
-            response = rw.gui.error("Could not parse JSON message, see error.log for more details")
-            logger.error('JSON '+ str(e))
+            error_msg = "Could not parse JSON message"
+            if log_errors:
+                error_msg += ", see error.log for more details"
+                logger.error('JSON '+ str(e))
+            response = rw.gui.error(error_msg)
+            response = rw.gui.error(", see error.log for more details")
         sys.stdout.write(json.dumps(response) + "\n")
         sys.stdout.flush()
 

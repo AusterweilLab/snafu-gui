@@ -1,11 +1,36 @@
 {
-    "name":"snafu",
-    "main":"html/index_standalone.html",
-    "window": {
-        "frame": true,
-        "fullscreen": false,
-        "width": 1100,
-        "height": 670
-    }      
+  "name": "snafu",
+  "main": "html/index.html",
+  "window": {
+    "frame": true,
+    "fullscreen": false,
+    "width": 1120,
+    "height": 670
+  },
+  "build": {
+    "nwVersion": "0.28.0"
+  },
+  "scripts": {
+    "dist": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ ."
+  },
+  "description": "GUI for semnet package (though much less extensive). This is the development version, it does not include `nwjs` required to run,  nor does it include `semnet` binaries (you must download the `semnet` package separately and place the `rw` folder in `/py`).  Actually that sounds complicated, why don't you just use the web version at http://alab.psych.wisc.edu/snafu? Or if you really want the desktop version, e-mail me at zemla at wisc dot edu for help.",
+  "version": "0.5.0",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "concat": "^1.0.0",
+    "python-shell": "^0.3.0"
+  },
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.14.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffzemla/snafu.git"
+  },
+  "author": "Jeffrey C. Zemla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffzemla/snafu/issues"
+  },
+  "homepage": "https://github.com/jeffzemla/snafu#readme"
 }
-

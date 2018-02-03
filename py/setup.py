@@ -9,7 +9,11 @@ from setuptools import setup
 
 APP = ['interface.py']
 DATA_FILES = []
-OPTIONS = {}
+OPTIONS = {
+        #'includes': ['os'],
+        'excludes': ['matplotlib'],
+        'argv_emulation': True
+        }
 
 setup(
     app=APP,

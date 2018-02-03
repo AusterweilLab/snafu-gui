@@ -1,7 +1,7 @@
 data_parameters = { 
     "cluster_types": ["fluid", "static"],
-    "cluster_schemes": ["Troyer","Troyer-Hills", "Troyer-Hills-Zemla"],
-    "spellfiles": ["None","Zemla","Lange","LangeSpanish"],
+    "cluster_schemes": [],
+    "spellfiles": [],
     "subjects": [],
     "groups": [],
     "categories": [],
@@ -12,9 +12,9 @@ data_parameters = {
     "subject": "",
     "group": "",
     "category": "",
-    "spellfile": "Lange",
+    "spellfile": "kendra spellfile",
     "cluster_type": "fluid",
-    "cluster_scheme": "Troyer-Hills-Zemla"
+    "cluster_scheme": "troyer hills zemla animals"
 }
 
 network_parameters = {

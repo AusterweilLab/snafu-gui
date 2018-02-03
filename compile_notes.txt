@@ -1,0 +1,28 @@
+## compiling interface.py with py2app
+
+cd py
+sudo ./build_py2app.sh
+
+* must be using python.org python, not Apple python
+
+
+
+
+## notes on packaging/distribution nwjs app without SDK
+
+* install phoenix-builder (https://github.com/evshiron/nwjs-builder-phoenix) if not installed locally
+    * npm install nwjs-builder-phoenix --save-dev
+
+* update nwjs/snafu version in package.json?
+
+* set flag in app.js to nwjs-app
+
+sudo rm -rf dist    # remove old version
+sudo npm run dist   # compile new version
+
+* compiling nwjs breaks compiled python interface (dunno why)-- manually copy interface.app to compiled nwjs version
+* might need to chmod +x interface in interface.app
+
+## web version set-up
+
+set flag in app.js

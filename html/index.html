@@ -1,4 +1,3 @@
-<!-- web based version of SNAFU -->
 <html>
 <head>
     <title>semnet</title>
@@ -6,15 +5,15 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <script type="text/javascript" src="../lib/jquery.js" defer></script>
     <script type="text/javascript" src="../lib/rivets.js" defer></script>
-    <script type="text/javascript" src="../js/appweb.js" defer></script>
-    <script type="text/javascript" src="../js/controllers.js" defer></script>
     <script type="text/javascript" src="../js/model.js" defer></script>
+    <script type="text/javascript" src="../js/app.js" defer></script>
+    <script type="text/javascript" src="../js/controllers.js" defer></script>
 </head>
 <body>
-    <div id="about"> v 0.4.0 </div>
+    <div id="about"> v 0.5.0 </div>
     <div id="input_row">
         <input type="text" id="fluency_files" value="results_cleaned.csv">
-		<input type="hidden" id="fluency_dir" value="../uploads/">
+		<input type="hidden" id="fluency_dir" value="../uploads">
         <input type="button" id="choose_file" value="Browse">
         <input type="file" id="real_choose_file"> <!-- easy hack to style file select -->
         <input type="button" id="loaddata" value="Load data"> 
@@ -40,7 +39,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="Reset" id="reset">
             <img src="../img/loading.gif" id="loading">
-            <a href="help.html"><img src="../img/question.png" id="question"></a>
+            <img id="question" src="../img/question.png">
         </div>
     </div>
     <div id="data_row">
@@ -189,6 +188,6 @@
         </div>
     </div>
     <div style="clear: both; font-weight: bold;">For Questions/comments/technical support please contact zemla@wisc.edu</div>
-    <span style="font-style: italic; font-size: 10pt;">Support for this research was provided by NIH R21AG0534676 and the Office of the VCGRE at UW- Madison with funding from the WARF.</span>
+    <span style="font-style: italic; font-size: 10pt;">Support for this research was provided by NIH R21AG0534676 and the Office of the VCGRE at UW-Madison with funding from the WARF.</span>
 </body>
 </html>

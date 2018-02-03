@@ -1,195 +1,40 @@
-2017-09-28 13:35:28,488 ERROR SNAFU failed with Python error: [Errno 2] No such file or directory: '/../snet/USF_animal_subset.snet'
-2017-09-28 13:38:28,640 ERROR SNAFU failed with Python error: No JSON object could be decoded
-2017-09-28 13:38:41,656 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
-2017-09-28 13:43:25,064 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
-2017-09-28 13:43:53,640 ERROR SNAFU failed with Python error: 'numpy.float64' object is not iterable
-2017-09-28 13:45:56,540 ERROR SNAFU failed with Python error: No JSON object could be decoded
-2017-09-28 13:46:57,927 ERROR JSON No JSON object could be decoded
-2017-09-28 14:50:46,303 ERROR JSON No JSON object could be decoded
-2017-09-28 14:51:34,325 ERROR JSON No JSON object could be decoded
-2017-09-28 14:52:34,539 ERROR JSON No JSON object could be decoded
-2017-09-28 14:53:17,874 ERROR JSON No JSON object could be decoded
-2017-09-28 14:53:45,212 ERROR JSON No JSON object could be decoded
-2017-09-28 14:53:56,117 ERROR JSON No JSON object could be decoded
-2017-09-28 14:54:44,235 ERROR JSON No JSON object could be decoded
-2017-09-28 14:56:17,494 ERROR JSON No JSON object could be decoded
-2017-09-28 15:01:06,216 ERROR JSON No JSON object could be decoded
-2017-09-28 15:29:14,472 ERROR JSON No JSON object could be decoded
-2017-09-28 15:30:11,721 ERROR JSON No JSON object could be decoded
-2017-09-28 15:31:49,093 ERROR JSON No JSON object could be decoded
-2017-09-28 15:32:21,884 ERROR JSON No JSON object could be decoded
-2017-09-28 15:32:35,996 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
-2017-09-28 15:36:45,759 ERROR JSON No JSON object could be decoded
-2017-09-28 15:37:08,175 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
-2017-09-28 15:37:14,049 ERROR UNKNOWN coercing to Unicode: need string or buffer, int found
-2017-09-28 15:38:04,891 ERROR JSON No JSON object could be decoded
-2017-09-28 15:38:19,297 ERROR UNKNOWN unsupported operand type(s) for -: 'int' and 'unicode'
-2017-09-28 15:40:25,035 ERROR JSON No JSON object could be decoded
-2017-09-28 15:43:05,154 ERROR JSON No JSON object could be decoded
-2017-09-28 15:50:01,050 ERROR JSON No JSON object could be decoded
-2017-09-28 15:53:41,989 ERROR JSON No JSON object could be decoded
-2017-09-28 16:01:04,118 ERROR JSON No JSON object could be decoded
-2017-09-28 16:05:27,555 ERROR JSON No JSON object could be decoded
-2017-09-28 16:06:08,944 ERROR JSON No JSON object could be decoded
-2017-09-28 16:06:47,344 ERROR JSON No JSON object could be decoded
-2017-09-28 16:08:22,484 ERROR JSON No JSON object could be decoded
-2017-09-28 16:10:40,452 ERROR JSON No JSON object could be decoded
-2017-09-28 16:11:31,076 ERROR JSON No JSON object could be decoded
-2017-09-28 16:12:20,220 ERROR JSON No JSON object could be decoded
-2017-09-28 16:13:12,692 ERROR JSON No JSON object could be decoded
-2017-09-28 16:15:50,397 ERROR JSON No JSON object could be decoded
-2017-09-28 16:22:54,744 ERROR JSON No JSON object could be decoded
-2017-09-28 16:23:39,619 ERROR JSON No JSON object could be decoded
-2017-09-28 16:24:30,323 ERROR JSON No JSON object could be decoded
-2017-09-29 12:55:58,576 ERROR JSON No JSON object could be decoded
-2017-09-29 13:05:25,430 ERROR JSON No JSON object could be decoded
-2017-09-29 13:06:21,412 ERROR JSON No JSON object could be decoded
-2017-10-02 11:22:31,559 ERROR JSON No JSON object could be decoded
-2017-10-03 12:55:28,677 ERROR JSON No JSON object could be decoded
-2017-10-03 12:55:56,179 ERROR JSON No JSON object could be decoded
-2017-10-03 12:56:40,174 ERROR JSON No JSON object could be decoded
-2017-10-03 12:56:45,814 ERROR JSON No JSON object could be decoded
-2017-10-03 12:57:01,168 ERROR JSON No JSON object could be decoded
-2017-10-03 12:57:18,849 ERROR JSON No JSON object could be decoded
-2017-10-03 12:57:39,330 ERROR JSON No JSON object could be decoded
-2017-10-03 12:58:34,333 ERROR JSON No JSON object could be decoded
-2017-10-03 13:00:03,002 ERROR JSON No JSON object could be decoded
-2017-10-03 13:01:52,050 ERROR JSON No JSON object could be decoded
-2017-10-03 13:02:16,368 ERROR JSON No JSON object could be decoded
-2017-10-03 13:03:06,638 ERROR JSON No JSON object could be decoded
-2017-10-03 13:04:03,407 ERROR JSON No JSON object could be decoded
-2017-10-03 13:05:27,046 ERROR JSON No JSON object could be decoded
-2017-10-03 13:15:11,448 ERROR JSON No JSON object could be decoded
-2017-10-03 13:16:04,169 ERROR JSON No JSON object could be decoded
-2017-10-03 13:16:27,937 ERROR JSON No JSON object could be decoded
-2017-10-03 13:17:43,303 ERROR JSON No JSON object could be decoded
-2017-10-03 13:18:41,376 ERROR JSON No JSON object could be decoded
-2017-10-03 13:18:55,614 ERROR JSON No JSON object could be decoded
-2017-10-03 13:19:27,325 ERROR JSON No JSON object could be decoded
-2017-10-03 13:19:43,415 ERROR JSON No JSON object could be decoded
-2017-10-03 13:19:50,420 ERROR JSON No JSON object could be decoded
-2017-10-03 13:19:59,810 ERROR JSON No JSON object could be decoded
-2017-10-03 13:21:24,500 ERROR JSON No JSON object could be decoded
-2017-10-03 13:22:07,905 ERROR JSON No JSON object could be decoded
-2017-10-03 13:23:40,762 ERROR JSON No JSON object could be decoded
-2017-10-03 13:24:10,589 ERROR JSON No JSON object could be decoded
-2017-10-03 13:24:18,003 ERROR JSON No JSON object could be decoded
-2017-10-03 13:25:15,748 ERROR JSON No JSON object could be decoded
-2017-10-03 13:26:01,274 ERROR JSON No JSON object could be decoded
-2017-10-03 13:26:10,977 ERROR JSON No JSON object could be decoded
-2017-10-03 13:26:32,033 ERROR JSON No JSON object could be decoded
-2017-10-03 13:31:36,933 ERROR JSON No JSON object could be decoded
-2017-10-03 13:33:03,200 ERROR JSON No JSON object could be decoded
-2017-10-03 13:36:42,336 ERROR JSON No JSON object could be decoded
-2017-10-03 13:37:02,907 ERROR JSON No JSON object could be decoded
-2017-10-03 13:40:49,702 ERROR JSON No JSON object could be decoded
-2017-10-03 13:41:52,727 ERROR JSON No JSON object could be decoded
-2017-10-03 13:42:26,748 ERROR JSON No JSON object could be decoded
-2017-10-03 13:42:32,403 ERROR JSON No JSON object could be decoded
-2017-10-03 13:44:33,651 ERROR JSON No JSON object could be decoded
-2017-10-03 13:44:38,143 ERROR JSON No JSON object could be decoded
-2017-10-03 13:50:30,913 ERROR JSON No JSON object could be decoded
-2017-10-03 13:51:11,202 ERROR JSON No JSON object could be decoded
-2017-10-03 13:51:39,902 ERROR JSON No JSON object could be decoded
-2017-10-03 13:52:06,086 ERROR JSON No JSON object could be decoded
-2017-10-03 13:52:40,632 ERROR JSON No JSON object could be decoded
-2017-10-03 13:52:49,987 ERROR JSON No JSON object could be decoded
-2017-10-03 13:53:12,207 ERROR JSON No JSON object could be decoded
-2017-10-03 13:53:25,020 ERROR JSON No JSON object could be decoded
-2017-10-03 13:53:30,526 ERROR JSON No JSON object could be decoded
-2017-10-03 13:54:11,718 ERROR JSON No JSON object could be decoded
-2017-10-03 13:55:03,076 ERROR JSON No JSON object could be decoded
-2017-10-04 12:27:16,231 ERROR JSON No JSON object could be decoded
-2017-10-23 11:00:07,996 ERROR JSON No JSON object could be decoded
-2017-10-23 11:00:55,546 ERROR JSON No JSON object could be decoded
-2017-10-23 11:01:29,354 ERROR JSON No JSON object could be decoded
-2017-10-23 11:02:24,422 ERROR JSON No JSON object could be decoded
-2017-10-23 11:02:42,045 ERROR JSON No JSON object could be decoded
-2017-10-23 11:05:20,799 ERROR JSON No JSON object could be decoded
-2017-10-23 11:06:31,221 ERROR JSON No JSON object could be decoded
-2017-10-23 11:09:21,098 ERROR JSON No JSON object could be decoded
-2017-10-23 11:10:45,974 ERROR JSON No JSON object could be decoded
-2017-10-23 11:27:50,085 ERROR JSON No JSON object could be decoded
-2017-10-23 12:20:01,024 ERROR JSON No JSON object could be decoded
-2017-10-23 13:09:50,672 ERROR JSON No JSON object could be decoded
-2017-11-07 10:28:59,431 ERROR JSON No JSON object could be decoded
-2017-11-07 17:59:09,484 ERROR JSON No JSON object could be decoded
-2017-11-08 09:01:18,781 ERROR JSON No JSON object could be decoded
-2017-11-11 00:25:51,357 ERROR JSON No JSON object could be decoded
-2017-11-14 18:53:18,808 ERROR JSON No JSON object could be decoded
-2017-11-17 15:09:18,574 ERROR JSON No JSON object could be decoded
-2017-12-08 13:04:15,668 ERROR UNKNOWN 'listnum' is not in list
-2017-12-08 13:04:18,396 ERROR UNKNOWN 'listnum' is not in list
-2017-12-08 13:04:23,247 ERROR UNKNOWN 'listnum' is not in list
-2017-12-08 13:04:32,714 ERROR JSON No JSON object could be decoded
-2017-12-08 13:04:39,823 ERROR UNKNOWN 'listnum' is not in list
-2017-12-08 13:06:20,440 ERROR JSON No JSON object could be decoded
-2017-12-08 13:11:45,300 ERROR JSON No JSON object could be decoded
-2017-12-11 11:23:07,241 ERROR JSON No JSON object could be decoded
-2017-12-12 13:00:12,939 ERROR JSON No JSON object could be decoded
-2017-12-12 13:12:55,522 ERROR JSON No JSON object could be decoded
-2017-12-12 13:13:24,749 ERROR JSON No JSON object could be decoded
-2017-12-12 13:13:36,417 ERROR JSON No JSON object could be decoded
-2017-12-12 13:14:28,116 ERROR JSON No JSON object could be decoded
-2017-12-12 13:15:01,138 ERROR JSON No JSON object could be decoded
-2017-12-12 13:15:39,893 ERROR JSON No JSON object could be decoded
-2017-12-12 13:46:51,803 ERROR JSON No JSON object could be decoded
-2017-12-12 13:48:10,578 ERROR JSON No JSON object could be decoded
-2017-12-12 13:48:40,119 ERROR JSON No JSON object could be decoded
-2017-12-12 13:49:45,930 ERROR JSON No JSON object could be decoded
-2017-12-12 13:50:09,151 ERROR JSON No JSON object could be decoded
-2017-12-12 13:50:15,046 ERROR UNKNOWN list index out of range
-2017-12-12 13:51:27,667 ERROR JSON No JSON object could be decoded
-2017-12-12 13:52:41,760 ERROR JSON No JSON object could be decoded
-2017-12-12 14:00:26,806 ERROR JSON No JSON object could be decoded
-2017-12-12 14:01:00,912 ERROR JSON No JSON object could be decoded
-2017-12-12 14:01:27,066 ERROR JSON No JSON object could be decoded
-2017-12-12 14:04:58,851 ERROR JSON No JSON object could be decoded
-2017-12-12 14:21:47,176 ERROR JSON No JSON object could be decoded
-2017-12-12 14:30:11,575 ERROR JSON No JSON object could be decoded
-2017-12-12 14:31:32,419 ERROR JSON No JSON object could be decoded
-2017-12-12 14:31:39,329 ERROR JSON No JSON object could be decoded
-2017-12-12 14:33:16,311 ERROR JSON No JSON object could be decoded
-2017-12-12 14:33:27,145 ERROR JSON No JSON object could be decoded
-2017-12-12 14:36:23,522 ERROR JSON No JSON object could be decoded
-2017-12-12 14:37:01,655 ERROR JSON No JSON object could be decoded
-2017-12-12 14:39:26,324 ERROR JSON No JSON object could be decoded
-2017-12-12 14:52:28,400 ERROR JSON No JSON object could be decoded
-2017-12-12 17:12:33,580 ERROR JSON No JSON object could be decoded
-2017-12-13 10:39:52,074 ERROR UNKNOWN 'int' object is not iterable
-2017-12-13 10:41:04,403 ERROR JSON No JSON object could be decoded
-2017-12-13 10:41:21,320 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 10:43:01,514 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 10:43:09,853 ERROR UNKNOWN 'int' object is not iterable
-2017-12-13 11:05:56,964 ERROR JSON No JSON object could be decoded
-2017-12-13 11:06:10,992 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 11:07:19,095 ERROR JSON No JSON object could be decoded
-2017-12-13 11:09:15,987 ERROR JSON No JSON object could be decoded
-2017-12-13 11:39:37,536 ERROR JSON No JSON object could be decoded
-2017-12-13 11:40:11,743 ERROR JSON No JSON object could be decoded
-2017-12-13 11:41:07,356 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 11:42:25,821 ERROR JSON No JSON object could be decoded
-2017-12-13 11:42:45,981 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 11:44:29,116 ERROR UNKNOWN 'unicode' object has no attribute 'append'
-2017-12-13 11:58:16,398 ERROR JSON No JSON object could be decoded
-2017-12-13 12:03:54,861 ERROR UNKNOWN 'factor_type'
-2017-12-13 12:04:03,306 ERROR UNKNOWN 'factor_type'
-2017-12-13 12:04:40,298 ERROR UNKNOWN 'factor_type'
-2017-12-13 12:07:05,014 ERROR JSON No JSON object could be decoded
-2017-12-13 12:07:22,438 ERROR UNKNOWN global name 'spelling_filename' is not defined
-2017-12-13 12:09:20,869 ERROR JSON No JSON object could be decoded
-2017-12-13 12:10:31,977 ERROR UNKNOWN 160
-2017-12-13 13:13:54,219 ERROR JSON No JSON object could be decoded
-2017-12-13 13:14:01,671 ERROR UNKNOWN readX() got an unexpected keyword argument 'ignorePerseverations'
-2017-12-13 13:15:07,710 ERROR JSON No JSON object could be decoded
-2017-12-13 13:15:22,346 ERROR UNKNOWN global name 'removePerseverations' is not defined
-2017-12-13 13:15:41,919 ERROR JSON No JSON object could be decoded
-2017-12-13 13:30:54,256 ERROR JSON No JSON object could be decoded
-2017-12-14 13:57:09,133 ERROR JSON No JSON object could be decoded
-2017-12-18 12:04:33,511 ERROR JSON No JSON object could be decoded
-2017-12-29 11:36:34,509 ERROR UNKNOWN 'id' is not in list
-2017-12-29 13:26:47,412 ERROR JSON No JSON object could be decoded
-2018-01-06 14:05:29,217 ERROR JSON No JSON object could be decoded
-2018-01-06 14:10:22,251 ERROR JSON No JSON object could be decoded
-2018-01-06 14:19:40,795 ERROR JSON No JSON object could be decoded
-2018-01-06 14:19:57,607 ERROR JSON No JSON object could be decoded
+2018-02-02 16:48:01,094 ERROR UNKNOWN [Errno 2] No such file or directory: u'/results_cleaned.csv'
+2018-02-02 16:52:33,501 ERROR UNKNOWN [Errno 2] No such file or directory: u'/Users/jcz/Dropbox/projects/semnet/snafuresults_cleaned.csv'
+2018-02-02 16:53:42,600 ERROR UNKNOWN 'filename'
+2018-02-02 16:55:01,027 ERROR UNKNOWN 'filename'
+2018-02-02 16:55:19,112 ERROR UNKNOWN 'filename'
+2018-02-02 16:57:45,782 ERROR UNKNOWN 'fullpath'
+2018-02-02 16:58:26,825 ERROR UNKNOWN [Errno 2] No such file or directory: u'/results_cleaned.csv'
+2018-02-02 16:59:30,449 ERROR UNKNOWN [Errno 2] No such file or directory: u'../uploads//results_cleaned.csv'
+2018-02-02 16:59:49,339 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/results_cleaned.csv'
+2018-02-02 17:00:23,256 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/results_cleaned.csv'
+2018-02-02 17:01:06,553 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/results_cleaned.csv'
+2018-02-02 17:01:41,178 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/results_cleaned.csv'
+2018-02-02 17:04:53,194 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/results_cleaned.csv'
+2018-02-02 17:06:20,499 ERROR UNKNOWN [Errno 2] No such file or directory: u'/uploads/~/Dropbox/projects/semnet/snafu/'
+2018-02-02 17:07:33,198 ERROR UNKNOWN [Errno 2] No such file or directory: u'~/Dropbox/projects/semnet/snafu//results_cleaned.csv'
+2018-02-02 17:07:56,087 ERROR UNKNOWN [Errno 2] No such file or directory: u'~/Dropbox/projects/semnet/snafu/uploads/results_cleaned.csv'
+2018-02-02 17:08:28,866 ERROR UNKNOWN 'fullpath'
+2018-02-02 17:09:21,126 ERROR UNKNOWN 'fullpath'
+2018-02-02 17:10:18,191 ERROR JSON No JSON object could be decoded
+2018-02-02 17:10:39,159 ERROR UNKNOWN [Errno 2] No such file or directory: u'/Users/jcz/Dropbox/projects/semnet/snafu/uploads//Users/jcz/Desktop/results_cleaned.csv'
+2018-02-02 17:19:05,735 ERROR UNKNOWN [Errno 2] No such file or directory: u'/Users/jcz/Dropbox/projects/semnet/snafu/uploads//Users/jcz/Desktop/results_cleaned.csv'
+2018-02-02 17:20:42,940 ERROR JSON No JSON object could be decoded
+2018-02-02 17:20:56,228 ERROR JSON No JSON object could be decoded
+2018-02-02 17:24:11,986 ERROR JSON No JSON object could be decoded
+2018-02-02 17:24:26,794 ERROR JSON No JSON object could be decoded
+2018-02-02 17:24:39,881 ERROR JSON No JSON object could be decoded
+2018-02-02 18:50:10,389 ERROR JSON No JSON object could be decoded
+2018-02-02 18:50:11,612 ERROR JSON No JSON object could be decoded
+2018-02-02 20:16:09,429 ERROR JSON No JSON object could be decoded
+2018-02-02 20:24:46,936 ERROR JSON No JSON object could be decoded
+2018-02-02 20:25:10,901 ERROR JSON No JSON object could be decoded
+2018-02-02 20:25:19,125 ERROR JSON No JSON object could be decoded
+2018-02-02 20:29:18,117 ERROR JSON No JSON object could be decoded
+2018-02-02 20:31:17,086 ERROR JSON No JSON object could be decoded
+2018-02-02 20:39:27,713 ERROR JSON No JSON object could be decoded
+2018-02-02 20:40:49,023 ERROR JSON No JSON object could be decoded
+2018-02-02 20:51:00,747 ERROR JSON No JSON object could be decoded
+2018-02-02 20:51:18,992 ERROR JSON No JSON object could be decoded
+2018-02-02 21:26:54,239 ERROR UNKNOWN quit() takes exactly 1 argument (2 given)
+2018-02-02 21:29:37,675 ERROR JSON No JSON object could be decoded
