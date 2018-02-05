@@ -37,6 +37,15 @@ network_parameters = {
 data_properties = { }
 network_properties = { }
 
+// Defines which models take which parameters (for hide/show in interface)
+params={}
+params['U-INVITE'] = ['prior', 'starting_graph', 'goni_windowsize', 'goni_threshold', 'first_item', 'jump_type', 'jump_probability', 'priming_probability']
+params['RW'] = []
+params['Kenett'] = []
+params['Goni'] = ['goni_threshold', 'goni_windowsize']
+params['Chan'] = []
+params['FirstEdge'] = []
+
 // Rivets formatters
 rivets.formatters.trunc = function(value) {
     if (Number(value) == value) {
@@ -47,7 +56,11 @@ rivets.formatters.trunc = function(value) {
 }
 
 rivets.formatters.eq = function(value, arg) {
-  return value == arg;
+    return value == arg;
+}
+
+rivets.formatters.hasProp = function(value, arg) {
+    return params[value].includes(arg)
 }
 
 var data_parameters_rvs = rivets.bind($('#data_parameters'), { data_parameters: data_parameters });

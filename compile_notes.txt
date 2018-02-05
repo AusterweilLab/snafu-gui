@@ -19,14 +19,14 @@ sudo ./build_py2app.sh
 * set flag in app.js to nwjs-app
 
 sudo rm -rf dist    # remove old version
-npm run dist   # compile new version
+npm run dist        # compile new version
 
 * compiling nwjs breaks compiled python interface (dunno why)-- manually copy interface.app to compiled nwjs version
 * might need to chmod +x interface in interface.app, but hopefully not
 * manually remove large files?
-    snafu_demo_video.mov
     snet/dedyne.snet
 * zip up folder (use mac gui zip, smaller than terminal zip)
+* ~ 376mb uncompressed, ~150mb compressed
 
 
 ## web version set-up
