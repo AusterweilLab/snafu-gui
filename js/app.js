@@ -1,4 +1,4 @@
-var snafu_type = "nwjs-py";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
+var snafu_type = "web";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
 var debug_mode = 1;           // only applies to nwjs-py version only
 
 
