@@ -1,4 +1,4 @@
-var snafu_type = "nwjs-app";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
+var snafu_type = "nwjs-py";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
 var debug_mode = 1;           // only applies to nwjs-py version only
 
 
@@ -49,6 +49,7 @@ if (snafu_type == "web") {
     pysend({"type": "directory_listing", "folder": "schemes"});
     pysend({"type": "directory_listing", "folder": "spellfiles"});
     data_parameters['spellfiles'].push("None");
+    data_parameters['cluster_schemes'].push("None");
     
     // handle file upload
     // http://wabism.com/html5-file-api-how-to-upload-files-dynamically-using-ajax/
@@ -91,6 +92,7 @@ if (snafu_type == "web") {
         }
     })
     data_parameters['spellfiles'].push("None");
+    data_parameters['cluster_schemes'].push("None");
     
     fs.readdirSync('schemes/').forEach(file => {
         if (file.search(".csv") >= 0) {
