@@ -1,7 +1,3 @@
-* duplicate pop-up windows if you click them multiple times
-
-- diagnostics window in network parameters during u-invite fit
-
 - export stats on web version
 - export individual and group stats
 

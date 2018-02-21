@@ -1,5 +1,5 @@
 import sys, json, os
-import rw
+import snafu
 import numpy as np
 import networkx as nx
 import logging
@@ -39,28 +39,28 @@ def main():
         try:
             command = json.loads(command)                # string to JSON
             if 'type' in command.keys():
-                if command['type'] in dir(rw.gui):
+                if command['type'] in dir(snafu.gui):
                     try:
-                        response = getattr(rw.gui, command['type'])(command, root_path)
+                        response = getattr(snafu.gui, command['type'])(command, root_path)
                     except Exception, e:
                         error_msg = "Unknown error in function: " + command['type']
                         if log_errors:
                             error_msg += ", see error.log for more details"
                             logger.error('UNKNOWN ' + str(e))
-                        response = rw.gui.error(error_msg)
+                        response = snafu.gui.error(error_msg)
                     if command['type'] == "quit":
                         exit_status = 1
                 else:
-                    response = rw.gui.error("Invalid command: " + command['type'])
+                    response = snafu.gui.error("Invalid command: " + command['type'])
             else:
-                response = rw.gui.error("No command specified")
+                response = snafu.gui.error("No command specified")
         except Exception, e:
             error_msg = "Could not parse JSON message"
             if log_errors:
                 error_msg += ", see error.log for more details"
                 logger.error('JSON '+ str(e))
-            response = rw.gui.error(error_msg)
-            response = rw.gui.error(", see error.log for more details")
+            response = snafu.gui.error(error_msg)
+            response = snafu.gui.error(", see error.log for more details")
         sys.stdout.write(json.dumps(response) + "\n")
         sys.stdout.flush()
 

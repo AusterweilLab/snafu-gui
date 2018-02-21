@@ -5,7 +5,7 @@ node_modules/nwjs-builder-phoenix/
 py/.eggs/
 error.log
 .*.swp
-py/rw
+py/snafu
 snet
 spellfiles
 schemes
