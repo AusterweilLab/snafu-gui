@@ -1,1 +1,20 @@
 * duplicate pop-up windows if you click them multiple times
+
+- diagnostics window in network parameters during u-invite fit
+
+- rw crash on group network generation in nwjs-app
+
+
+SyntaxError: Unexpected token b in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at pyreplace (chrome-extension://lomgaojpadebocghnhhmcgbabfokpbce/js/app.js:7:20)
+    at Socket.<anonymous> (chrome-extension://lomgaojpadebocghnhhmcgbabfokpbce/js/app.js:132:13)
+
+
+    
+- export stats on web version
+- export individual and group stats
+
+- graph format? sna, cytoscape, graphviz, networkx, igraph, gephi
+
+- none option in data parameters

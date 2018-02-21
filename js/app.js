@@ -1,11 +1,11 @@
-var snafu_type = "web";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
+var snafu_type = "nwjs-app";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
 var debug_mode = 1;           // only applies to nwjs-py version only
 
 
 // Takes JSON message send back from Python and inserts it into the model
 function pyreplace(message) {
-    message = JSON.parse(message);
     console.log("JSON response: ", message);
+    message = JSON.parse(message);
     messagetype = message.type;
     delete message.type;        // don't store return type in data/network properties
     if (messagetype == "directory_listing") {
@@ -31,6 +31,7 @@ if (snafu_type == "web") {
     function pysend(command) {
         command = JSON.stringify(command);
         $.ajax({
+            async: false,
             type: "POST",
             url: "../py/interfaceweb.cgi",
             data: { "json_string": command },
@@ -47,6 +48,7 @@ if (snafu_type == "web") {
     // populate spellfiles and schemes
     pysend({"type": "directory_listing", "folder": "schemes"});
     pysend({"type": "directory_listing", "folder": "spellfiles"});
+    data_parameters['spellfiles'].push("None");
     
     // handle file upload
     // http://wabism.com/html5-file-api-how-to-upload-files-dynamically-using-ajax/
@@ -76,7 +78,7 @@ if (snafu_type == "web") {
 // NON WEB VERSION
     
     // debug?
-    if (debug_mode & snafu_type=="nwjs-py") {
+    if (debug_mode & (snafu_type=="nwjs-py" | snafu_type=="nwjs-app")) {
         var win = nw.Window.get();
         win.showDevTools();
     }
@@ -88,6 +90,8 @@ if (snafu_type == "web") {
             data_parameters['spellfiles'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
         }
     })
+    data_parameters['spellfiles'].push("None");
+    
     fs.readdirSync('schemes/').forEach(file => {
         if (file.search(".csv") >= 0) {
             data_parameters['cluster_schemes'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
@@ -123,9 +127,17 @@ if (snafu_type == "web") {
         var spawn = require('child_process').spawn;
         var pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface',['nwjs-app']);
                 
+        var buffer = ''
         pyapp.stdout.on('data', function(data) {
-            //console.log(data.toString());
-            pyreplace(data.toString());
+            buffer += data.toString();
+            try {
+                message = JSON.parse(buffer);   // make sure json is valid
+                pyreplace(buffer);
+                buffer = '';                    // reset buffer if valid
+                console.log('GOOD' + buffer);
+            } catch(err) {
+                // incomplete json buffer, wait for more data...
+            }
         });
                                                     
         pyapp.stdout.on('end', function(data) {
