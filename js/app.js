@@ -10,6 +10,8 @@ function pyreplace(message) {
     delete message.type;        // don't store return type in data/network properties
     if (messagetype == "directory_listing") {
         Object.assign(data_parameters, message);
+    } else if (messagetype == "write_data") {
+        window.open(message.filename);
     } else if (messagetype == "data_properties") {
         delete data_properties.perseverations;      // reset these two properties (they may not get overwritten)
         delete data_properties.intrusions;

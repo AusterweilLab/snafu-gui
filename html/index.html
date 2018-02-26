@@ -70,7 +70,13 @@
         </div>
         <div id="data_properties" class="box">
             <table>
-                <tr> <th colspan="2">Data Properties</th> </tr>
+                <tr>
+                    <th>Data Properties</th>
+                    <th>
+                        <input type="button" id="export_data" value="Export" rv-enabled="data_properties.num_lists">
+                        <input type="file" id="real_export_data" nwsaveas="data.csv"> <!-- easy hack to style file select -->
+                    </th>   
+                </tr>
                 <tr>
                     <td>Number of lists</td>
                     <td>{ data_properties.num_lists }</td>

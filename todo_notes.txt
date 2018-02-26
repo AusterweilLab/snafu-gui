@@ -1,4 +1,6 @@
 - export stats on web version
-- export individual and group stats
+- batch processing (export stats on many individuals)`
 
 - graph format? sna, cytoscape, graphviz, networkx, igraph, gephi
+
+- diagnostic window

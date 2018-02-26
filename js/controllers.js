@@ -58,19 +58,48 @@ $("#export_network").click(function() {
     $("#real_export_network").click();
 });
 
-$("#real_export_network").change(function() {
-    function saveFile(filename) {
-        var fs = require('fs');
-        fs.writeFile(filename, JSON.stringify(network_properties.graph), function(err) {
-            if(err) {
-                return console.log(err);
-            }
-            console.log("File saved");
-        });
-    }
+$("#export_data").click(function() {
+    $("#real_export_data").click();
+});
 
-    var filename = $(this).val();
-    saveFile(filename);
+$("#real_export_network").change(function() {
+    if (snafu_type == "web") {
+        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        pysend(command)
+    } else {
+        function saveFile(filename) {
+            var fs = require('fs');
+            fs.writeFile(filename, JSON.stringify(network_properties.graph), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("File saved");
+            });
+        }
+
+        var filename = $(this).val();
+        saveFile(filename);
+    }
+});
+
+$("#real_export_data").change(function() {
+    if (snafu_type == "web") {
+        command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
+        pysend(command)
+    } else {
+        function saveFile(filename) {
+            var fs = require('fs');
+            fs.writeFile(filename, JSON.stringify(data_properties), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("File saved");
+            });
+        }
+
+        var filename = $(this).val();
+        saveFile(filename);
+    }
 });
 
 $("#question").click(function() {

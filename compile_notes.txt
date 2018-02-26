@@ -31,4 +31,11 @@ npm run dist        # compile new version
 
 ## web version set-up
 
-set flag in app.js
+run ~/.update-snafu.sh on luke
+if alab.psych.wisc.edu/snafu-dev looks ok, run ~/.update-snafu.sh live
+
+old notes, hopefully useless:
+    - make sure "web" mode is enabled (see top of js/app.js)
+    - py/rw, /snet, /schemes folders exist
+    - all python packages are installed (networkx, scipy, etc)
+    - /uploads is 777
