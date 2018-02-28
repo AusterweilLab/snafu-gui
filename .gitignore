@@ -1,3 +1,5 @@
+uploads/*
+output/*
 dist/
 py/build/
 py/dist/
@@ -6,6 +8,3 @@ py/.eggs/
 error.log
 .*.swp
 py/snafu
-snet
-spellfiles
-schemes

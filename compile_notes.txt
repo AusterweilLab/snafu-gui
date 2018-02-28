@@ -1,3 +1,19 @@
+## hard links
+
+These directories are hard links:
+
+snet/
+schemes/
+spellfiles/
+
+They are synched with snafu-py. If deleted here, they are deleted for snafu-py instead!
+They are made using https://github.com/selkhateeb/hardlink
+To remove them, use `hln -u [dir]` instead
+
+Hard links are used to assist with github synching without maintaining multiple separate copies
+
+
+
 ## compiling interface.py with py2app
 
 cd py
@@ -34,8 +50,8 @@ npm run dist        # compile new version
 run ~/.update-snafu.sh on luke
 if alab.psych.wisc.edu/snafu-dev looks ok, run ~/.update-snafu.sh live
 
-old notes, hopefully useless:
+misc notes:
     - make sure "web" mode is enabled (see top of js/app.js)
     - py/rw, /snet, /schemes folders exist
     - all python packages are installed (networkx, scipy, etc)
-    - /uploads is 777
+    - /uploads and /output are  777

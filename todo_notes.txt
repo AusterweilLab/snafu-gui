@@ -1,6 +1,12 @@
-- export stats on web version
+- web version export shows pop-up blocker
+- web version export is always 'data.csv'
+- web version spinning wheel never disappears
+
 - batch processing (export stats on many individuals)`
 
 - graph format? sna, cytoscape, graphviz, networkx, igraph, gephi
 
 - diagnostic window
+
+-
+
