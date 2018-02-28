@@ -44,6 +44,8 @@ npm run dist        # compile new version
 * zip up folder (use mac gui zip, smaller than terminal zip)
 * ~ 338mb uncompressed, ~126mb compressed
 
+** why isn't it copying all directories??? some are missing like /uploads /snet /scheme /spellfiles
+
 
 ## web version set-up
 
