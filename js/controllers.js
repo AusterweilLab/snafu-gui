@@ -72,6 +72,15 @@ $("#export_data").click(function() {
 	}
 });
 
+$("#export_network_csv").click(function() {
+    if (snafu_type == "web") {
+        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        pysend(command)
+    } else {
+        $("#real_export_network_csv").click();
+    }
+});
+
 $("#real_export_network").change(function() {
 	function saveFile(filename) {
 		var fs = require('fs');
@@ -100,6 +109,51 @@ $("#real_export_data").change(function() {
 
 	var filename = $(this).val();
 	saveFile(filename);
+});
+
+$("#real_export_network_csv").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+
+        var output = JSON.parse("[]");
+        var obj = network_properties.graph;
+        var nodes = JSON.parse("[]");
+        for (var node in obj.nodes) {
+            if(obj.nodes.hasOwnProperty(node)) {
+                var val = obj.nodes[node];
+                nodes[val["id"]]=JSON.parse("{}");
+                nodes[val["id"]].label = val.label;
+            }
+        }
+
+        for (var key in obj.edges) {
+          if (obj.edges.hasOwnProperty(key)) {
+            var val = obj.edges[key];
+            output[val.id]=JSON.parse("{}");
+            output[val.id].source = nodes[val.source].label;
+            output[val.id].target = nodes[val.target].label;
+          }
+        }
+
+        const json2csv = require('json2csv').parse;
+        var fields = ['source', 'target'], quote = '', header = false, eol = '\n', opts = { fields, quote, header, eol };
+        var csv = null;
+        try {
+          console.log(output);
+          csv = json2csv(output, opts);
+          console.log(csv);
+        } catch (err) {
+          console.error(err);
+        }
+        fs.writeFile(filename, csv , function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+    var filename = $(this).val();
+    saveFile(filename);
 });
 
 $("#question").click(function() {
