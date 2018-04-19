@@ -54,15 +54,6 @@ $("#view_network").click(function() {
         "width": 1000});
 });
 
-$("#export_network").click(function() {
-    if (snafu_type == "web") {
-        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
-        pysend(command)
-    } else {
-		$("#real_export_network").click();
-	}
-});
-
 $("#export_data").click(function() {
     if (snafu_type == "web") {
         command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
@@ -70,6 +61,15 @@ $("#export_data").click(function() {
     } else {
 		$("#real_export_data").click();
 	}
+});
+
+$("#export_network").click(function() {
+    if (snafu_type == "web") {
+        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        pysend(command)
+    } else {
+        $("#real_export_network").click();
+    }
 });
 
 $("#export_network_csv").click(function() {
@@ -81,25 +81,19 @@ $("#export_network_csv").click(function() {
     }
 });
 
-$("#real_export_network").change(function() {
-	function saveFile(filename) {
-		var fs = require('fs');
-		fs.writeFile(filename, JSON.stringify(network_properties.graph), function(err) {
-			if(err) {
-				return console.log(err);
-			}
-			console.log("File saved");
-		});
-	}
-
-	var filename = $(this).val();
-	saveFile(filename);
+$("#export_network_gml").click(function() {
+    if (snafu_type == "web") {
+        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        pysend(command)
+    } else {
+        $("#real_export_network_gml").click();
+    }
 });
 
 $("#real_export_data").change(function() {
 	function saveFile(filename) {
 		var fs = require('fs');
-		fs.writeFile(filename, JSON.stringify(data_properties), function(err) {
+		fs.writeFile(filename, JSON.stringify(data_properties,null,'\t'), function(err) {
 			if(err) {
 				return console.log(err);
 			}
@@ -111,13 +105,28 @@ $("#real_export_data").change(function() {
 	saveFile(filename);
 });
 
+$("#real_export_network").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+        fs.writeFile(filename, JSON.stringify(network_properties.graph,null,'\t'), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+
+    var filename = $(this).val();
+    saveFile(filename);
+});
+
 $("#real_export_network_csv").change(function() {
     function saveFile(filename) {
         var fs = require('fs');
-
         var output = JSON.parse("[]");
         var obj = network_properties.graph;
         var nodes = JSON.parse("[]");
+        
         for (var node in obj.nodes) {
             if(obj.nodes.hasOwnProperty(node)) {
                 var val = obj.nodes[node];
@@ -126,9 +135,9 @@ $("#real_export_network_csv").change(function() {
             }
         }
 
-        for (var key in obj.edges) {
-          if (obj.edges.hasOwnProperty(key)) {
-            var val = obj.edges[key];
+        for (var edge in obj.edges) {
+          if (obj.edges.hasOwnProperty(edge)) {
+            var val = obj.edges[edge];
             output[val.id]=JSON.parse("{}");
             output[val.id].source = nodes[val.source].label;
             output[val.id].target = nodes[val.target].label;
@@ -146,6 +155,44 @@ $("#real_export_network_csv").change(function() {
           console.error(err);
         }
         fs.writeFile(filename, csv , function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+    var filename = $(this).val();
+    saveFile(filename);
+});
+
+$("#real_export_network_gml").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+        
+        var obj = network_properties.graph;
+        var nodes = JSON.parse("[]");
+        var gml = `graph\n[\n\tCreator "SNAFU"\n\tdirected 1\n`;
+        
+        for (var node in obj.nodes) {
+            if(obj.nodes.hasOwnProperty(node)) {
+                var val = obj.nodes[node];
+                gml += `\tnode\n\t[\n\t\tid `+val.id+`\n\t\tlabel "`+val.label+`"\n\t]\n`;
+                nodes[val["id"]]=JSON.parse("{}");
+                nodes[val["id"]].id = val.id;            }
+        }
+        
+        var edgeId = 0;
+        for (var edge in obj.edges) {
+          if (obj.edges.hasOwnProperty(edge)) {
+            var val = obj.edges[edge];
+            gml += `\tedge\n\t[\n\t\tid `+(edgeId++)+`\n\t\tsource `+nodes[val.source].id+`\n\t\ttarget `+nodes[val.target].id+`\n\t]\n`;
+          }
+        }
+        
+        gml+="]\n";
+
+
+        fs.writeFile(filename, gml , function(err) {
             if(err) {
                 return console.log(err);
             }
