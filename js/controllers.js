@@ -123,9 +123,10 @@ $("#real_export_network").change(function() {
 $("#real_export_network_csv").change(function() {
     function saveFile(filename) {
         var fs = require('fs');
-        var output = JSON.parse("[]");
+
         var obj = network_properties.graph;
         var nodes = JSON.parse("[]");
+        var csv = "";
         
         for (var node in obj.nodes) {
             if(obj.nodes.hasOwnProperty(node)) {
@@ -138,22 +139,10 @@ $("#real_export_network_csv").change(function() {
         for (var edge in obj.edges) {
           if (obj.edges.hasOwnProperty(edge)) {
             var val = obj.edges[edge];
-            output[val.id]=JSON.parse("{}");
-            output[val.id].source = nodes[val.source].label;
-            output[val.id].target = nodes[val.target].label;
+            csv+=nodes[val.source].label+","+nodes[val.target].label+"\n";
           }
         }
 
-        const json2csv = require('json2csv').parse;
-        var fields = ['source', 'target'], quote = '', header = false, eol = '\n', opts = { fields, quote, header, eol };
-        var csv = null;
-        try {
-          console.log(output);
-          csv = json2csv(output, opts);
-          console.log(csv);
-        } catch (err) {
-          console.error(err);
-        }
         fs.writeFile(filename, csv , function(err) {
             if(err) {
                 return console.log(err);
