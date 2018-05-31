@@ -74,8 +74,9 @@ $("#export_network").click(function() {
 
 $("#export_network_csv").click(function() {
     if (snafu_type == "web") {
-        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
-        pysend(command)
+        // NOT YET IMPLEMENTED
+        // command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        // pysend(command)
     } else {
         $("#real_export_network_csv").click();
     }
@@ -83,8 +84,9 @@ $("#export_network_csv").click(function() {
 
 $("#export_network_gml").click(function() {
     if (snafu_type == "web") {
-        command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
-        pysend(command)
+        // NOT YET IMPLEMENTED
+        // command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
+        // pysend(command)
     } else {
         $("#real_export_network_gml").click();
     }
@@ -217,4 +219,20 @@ $("body").on("click","#perseveration_list",function(e) {
         "title": "Perseveration list",
         "height": 300,
         "width": 300});
+});
+
+$("#import_network").click(function() {
+    $("#real_import_network").click();
+});
+
+$("#real_import_network").change(function() {
+    var selected_file = $(this).val();
+    // $("#file_import").val(selected_file);
+    // var json = require(selected_file); // read json from a file path
+    // network_properties.graph = json;
+    command = {
+        "type": "analyze_graph",
+        "fullpath": selected_file
+    };
+    pysend(command);
 });

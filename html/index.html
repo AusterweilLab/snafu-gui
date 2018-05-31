@@ -185,6 +185,9 @@
                         <input type="file" id="real_export_network_csv" nwsaveas="network.csv">
                         <input type="button" id="export_network_gml" value="Export as GML" rv-enabled="network_properties.graph">
                         <input type="file" id="real_export_network_gml" nwsaveas="network.gml">
+
+                        <input type="button" id="import_network" value="Import JSON">
+                        <input type="file" id="real_import_network">
                     </th>
                 </tr>
                 <tr>
@@ -198,6 +201,14 @@
                 <tr>
                     <td>Avg shortest path length</td>
                     <td>{ network_properties.aspl | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Density</td>
+                    <td>{ network_properties.density | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg betweenness centrality</td>
+                    <td>{ network_properties.avg_betweenness_centrality | trunc }</td>
                 </tr>
             </table>
         </div>

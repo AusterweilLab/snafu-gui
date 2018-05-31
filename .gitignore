@@ -10,3 +10,4 @@ error.log
 py/snafu
 snet/dedyne.snet
 snet/BEAGLEdata.mat
+.DS_Store

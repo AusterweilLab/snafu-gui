@@ -59,7 +59,8 @@ input:disabled, select:disabled {
     color: #999;
 }
 
-#real_choose_file, #real_export_data, #real_export_network, #real_export_network_csv, #real_export_network_gml { display: none; }
+#real_choose_file, #real_export_data, #real_export_network, #real_export_network_csv,
+    #real_export_network_gml, #real_import_network { display: none; }
 
 #loading {
     width: 40px;
