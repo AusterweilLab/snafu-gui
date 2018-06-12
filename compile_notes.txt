@@ -22,7 +22,7 @@ sudo ./build_py2app.sh
 
 * must be using python.org python, not Apple python
 
-
+* note: may have to use scipy==0.14 if "ValueError: New Mach-O header is too large to relocate in ..." shows when compiling
 
 
 ## notes on packaging/distribution nwjs app without SDK

@@ -60,7 +60,7 @@ input:disabled, select:disabled {
 }
 
 #real_choose_file, #real_export_data, #real_export_network, #real_export_network_csv,
-    #real_export_network_gml, #real_import_network { display: none; }
+    #real_export_network_gml, #real_import_network, #real_export_data_csv { display: none; }
 
 #loading {
     width: 40px;

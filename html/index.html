@@ -73,8 +73,10 @@
                 <tr>
                     <th>Data Properties</th>
                     <th>
-                        <input type="button" id="export_data" value="Export" rv-enabled="data_properties.num_lists">
+                        <input type="button" id="export_data" value="Export JSON" rv-enabled="data_properties.num_lists">
                         <input type="file" id="real_export_data" nwsaveas="data.json"> <!-- easy hack to style file select -->
+                        <input type="button" id="export_data_csv" value="Export CSV" rv-enabled="data_properties.num_lists">
+                        <input type="file" id="real_export_data_csv" nwsaveas="data.csv"> <!-- easy hack to style file select -->
                     </th>   
                 </tr>
                 <tr>
@@ -174,18 +176,17 @@
                     <th>Network Properties</th>
                     <th>
                         <input type="button" value="View" id="view_network" rv-enabled="network_properties.graph">
-                        <input type="button" id="export_network" value="Export as JSON" rv-enabled="network_properties.graph">
+                        <input type="button" id="export_network" value="Export JSON" rv-enabled="network_properties.graph">
                         <input type="file" id="real_export_network" nwsaveas="network.json">
                         <!-- easy hack to style file select -->
                     </th>
                 </tr>
                 <tr>
                     <th colspan="2">
-                        <input type="button" id="export_network_csv" value="Export as CSV" rv-enabled="network_properties.graph">
+                        <input type="button" id="export_network_csv" value="Export CSV" rv-enabled="network_properties.graph">
                         <input type="file" id="real_export_network_csv" nwsaveas="network.csv">
-                        <input type="button" id="export_network_gml" value="Export as GML" rv-enabled="network_properties.graph">
+                        <input type="button" id="export_network_gml" value="Export GML" rv-enabled="network_properties.graph">
                         <input type="file" id="real_export_network_gml" nwsaveas="network.gml">
-
                         <input type="button" id="import_network" value="Import JSON">
                         <input type="file" id="real_import_network">
                     </th>

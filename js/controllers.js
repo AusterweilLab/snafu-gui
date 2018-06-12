@@ -63,6 +63,21 @@ $("#export_data").click(function() {
 	}
 });
 
+$("#real_export_data").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+        fs.writeFile(filename, JSON.stringify(data_properties,null,'\t'), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+
+    var filename = $(this).val();
+    saveFile(filename);
+});
+
 $("#export_network").click(function() {
     if (snafu_type == "web") {
         command = { "type": "write_data", "writestring": JSON.stringify(network_properties.graph) }
@@ -90,21 +105,6 @@ $("#export_network_gml").click(function() {
     } else {
         $("#real_export_network_gml").click();
     }
-});
-
-$("#real_export_data").change(function() {
-	function saveFile(filename) {
-		var fs = require('fs');
-		fs.writeFile(filename, JSON.stringify(data_properties,null,'\t'), function(err) {
-			if(err) {
-				return console.log(err);
-			}
-			console.log("File saved");
-		});
-	}
-
-	var filename = $(this).val();
-	saveFile(filename);
 });
 
 $("#real_export_network").change(function() {
@@ -235,4 +235,33 @@ $("#real_import_network").change(function() {
         "fullpath": selected_file
     };
     pysend(command);
+});
+
+$("#export_data_csv").click(function() {
+    if (snafu_type == "web") {
+        // NOT YET IMPLEMENTED
+        // command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
+        // pysend(command)
+    } else {
+        $("#real_export_data_csv").click();
+    }
+});
+
+$("#real_export_data_csv").change(function() {
+    function saveFile(filename) {
+        var fs = require('fs');
+        var csv = "";
+
+        csv = data_properties.csv_file;
+
+        fs.writeFile(filename, csv, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("File saved");
+        });
+    }
+
+    var filename = $(this).val();
+    saveFile(filename);
 });
