@@ -11,3 +11,5 @@ py/snafu
 snet/dedyne.snet
 snet/BEAGLEdata.mat
 .DS_Store
+node_modules/.bin
+.DS_Store
