@@ -11,7 +11,8 @@
     "nwVersion": "0.28.0"
   },
   "scripts": {
-    "dist": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ ."
+    "dist": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ .",
+    "dist-win": "build --tasks win-x64 --mirror https://dl.nwjs.io/ ."
   },
   "description": "GUI for snafu-py package (though much less extensive). This is the development version, it does not include `nwjs` required to run, nor does it include `snafu-py` scripts (you must download the `snafu-py` package separately and place the `rw` folder in `/py`).  Actually that sounds complicated, why don't you just use the web version at http://alab.psych.wisc.edu/snafu? Or if you really want the desktop version, e-mail me at zemla at wisc dot edu for help.",
   "version": "0.5.0",

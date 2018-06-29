@@ -57,3 +57,13 @@ misc notes:
     - py/rw, /snet, /schemes folders exist
     - all python packages are installed (networkx, scipy, etc)
     - /uploads and /output are  777
+
+## compiling on windows with py2exe
+
+* may requires: appdirs, packaging
+* may run into strange problems, google and try to solve them
+
+cd py
+python setup-win.py py2exe 
+cd ..
+npm run dist-win

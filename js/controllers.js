@@ -12,9 +12,11 @@ $("#real_choose_file").change(function() {
 });
 
 $("#loaddata").click(function() {
-	data_parameters.dir = $("#fluency_dir").val();
+	data_parameters.dir = $("#fluency_dir").val(); 
     data_parameters.filename = $("#fluency_files").val();
-    data_parameters.fullpath = data_parameters.dir + "/" + data_parameters.filename;
+    data_parameters.fullpath = data_parameters.filename;
+    if(data_parameters.dir.length>0)
+        data_parameters.fullpath = data_parameters.dir + '/' + data_parameters.filename;
     command = { "type": "list_subjects_and_categories",
                 "fullpath": data_parameters.fullpath
               }
