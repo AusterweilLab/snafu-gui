@@ -100,6 +100,14 @@
                     <td>{ data_properties.avg_cluster_size | trunc }</td>
                 </tr>
                 <tr>
+                    <td>Avg word frequency</td>
+                    <td>{ data_properties.avg_word_freq | trunc }</td>
+                </tr>
+                <tr>
+                    <td>Avg word age-of-acquisition</td>
+                    <td>{ data_properties.avg_word_aoa | trunc }</td>
+                </tr>
+                <tr>
                     <td>Avg number of intrusions</td>
                     <td>{ data_properties.avg_num_intrusions | trunc }
                         <a rv-if="data_properties.avg_num_intrusions" id="intrusion_list" href="#">(list)</a>
