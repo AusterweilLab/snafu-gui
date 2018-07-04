@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e                       # abort if any line returns an error
-sudo python setup.py py2app  #compile
+sudo python setup-mac.py py2app  #compile
 rm -rf build                 # remove excess file
 
 # unzip site-packages because one module causes errors when zipped
