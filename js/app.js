@@ -50,8 +50,13 @@ if (snafu_type == "web") {
     // populate spellfiles and schemes
     pysend({"type": "directory_listing", "folder": "schemes"});
     pysend({"type": "directory_listing", "folder": "spellfiles"});
+    pysend({"type": "directory_listing", "folder": "freqfiles"});
+    pysend({"type": "directory_listing", "folder": "aoafiles"});
+    data_parameters['freq_sub']=0.5;
     data_parameters['spellfiles'].push("None");
     data_parameters['cluster_schemes'].push("None");
+    // data_parameters['freqfiles'].push("None");
+    // data_parameters['aoafiles'].push("None");
     
     // handle file upload
     // http://wabism.com/html5-file-api-how-to-upload-files-dynamically-using-ajax/
@@ -93,6 +98,19 @@ if (snafu_type == "web") {
             data_parameters['spellfiles'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
         }
     })
+    fs.readdirSync('frequency/').forEach(file => {
+        if (file.search(".csv") >= 0) {
+            data_parameters['freqfiles'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
+        }
+    })
+    fs.readdirSync('aoa/').forEach(file => {
+        if (file.search(".csv") >= 0) {
+            data_parameters['aoafiles'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
+        }
+    })
+    // data_parameters['freqfiles'].push("None");
+    // data_parameters['aoafiles'].push("None");
+    data_parameters['freq_sub']=0.5;
     data_parameters['spellfiles'].push("None");
     data_parameters['cluster_schemes'].push("None");
     

@@ -54,16 +54,33 @@
                     <td><select id="spellfile" rv-value="data_parameters.spellfile">
                             <option rv-each-spellfile="data_parameters.spellfiles">{ spellfile }</option>
                         </select></td>
-                </tr><tr>
+                </tr>
                 <tr>
                     <td>Cluster scheme</td>
                     <td><select id="cluster_scheme" rv-value="data_parameters.cluster_scheme">
                             <option rv-each-cluster_scheme="data_parameters.cluster_schemes">{ cluster_scheme }</option>
                         </select></td>
-                </tr><tr>
+                </tr>
+                <tr>
                     <td>Cluster type</td>
                     <td><select id="cluster_type" rv-value="data_parameters.cluster_type">
                             <option rv-each-cluster_type="data_parameters.cluster_types">{ cluster_type }</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Word frequency file</td>
+                    <td><select id="freqfile" rv-value="data_parameters.freqfile">
+                            <option rv-each-freqfile="data_parameters.freqfiles">{ freqfile }</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Word freq. N/A sub. (-1 to exclude)</td>
+                    <td><input id="freq_sub" type="number" rv-value="data_parameters.freq_sub"></td>
+                </tr>
+                <tr>
+                    <td>Word age-of-acquisition file</td>
+                    <td><select id="aoafile" rv-value="data_parameters.aoafile">
+                            <option rv-each-aoafile="data_parameters.aoafiles">{ aoafile }</option>
                         </select></td>
                 </tr>
             </table>
@@ -101,11 +118,11 @@
                 </tr>
                 <tr>
                     <td>Avg word frequency</td>
-                    <td>{ data_properties.avg_word_freq | trunc }</td>
+                    <td>{ data_properties.avg_word_freq | trunc }<a rv-if="data_properties.avg_word_freq" id="word_freq_list" href="#"> words excluded: {data_properties.word_freq_rate}</a></td>
                 </tr>
                 <tr>
                     <td>Avg word age-of-acquisition</td>
-                    <td>{ data_properties.avg_word_aoa | trunc }</td>
+                    <td>{ data_properties.avg_word_aoa | trunc }<a rv-if="data_properties.avg_word_aoa" id="word_aoa_list" href="#"> words excluded: {data_properties.word_aoa_rate}</a></td>
                 </tr>
                 <tr>
                     <td>Avg number of intrusions</td>

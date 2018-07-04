@@ -223,6 +223,22 @@ $("body").on("click","#perseveration_list",function(e) {
         "width": 300});
 });
 
+$("body").on("click","#word_freq_list",function(e) {
+    e.preventDefault();
+    openwindow("word_freq.html", {
+        "title": "Excluded Words",
+        "height": 300,
+        "width": 300});
+});
+
+$("body").on("click","#word_aoa_list",function(e) {
+    e.preventDefault();
+    openwindow("word_aoa.html", {
+        "title": "Excluded Words",
+        "height": 300,
+        "width": 300});
+});
+
 $("#import_network").click(function() {
     $("#real_import_network").click();
 });

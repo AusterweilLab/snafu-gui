@@ -14,7 +14,11 @@ data_parameters = {
     "category": "",
     "spellfile": "kendra spellfile",
     "cluster_type": "fluid",
-    "cluster_scheme": "troyer hills zemla animals"
+    "cluster_scheme": "troyer hills zemla animals",
+    "freqfiles": [],
+    "aoafiles": [],
+    "freqfile": "sublex us",
+    "aoafile": "kuperman"
 }
 
 network_parameters = {
