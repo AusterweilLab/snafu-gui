@@ -1,5 +1,5 @@
-var snafu_type = "nwjs-py";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
-var debug_mode = 1;           // only applies to nwjs-py version only
+var snafu_type = "nwjs-app";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
+var debug_mode = 0;           // only applies to nwjs-py version only
 
 
 // Takes JSON message send back from Python and inserts it into the model

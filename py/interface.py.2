@@ -38,11 +38,11 @@ def main():
         command = command.split('\n')[0]
         try:
             command = json.loads(command)                # string to JSON
-            if 'type' in list(command.keys()):
+            if 'type' in command.keys():
                 if command['type'] in dir(snafu.gui):
                     try:
                         response = getattr(snafu.gui, command['type'])(command, root_path)
-                    except Exception as e:
+                    except Exception, e:
                         error_msg = "Unknown error in function: " + command['type']
                         if log_errors:
                             error_msg += ", see error.log for more details"
@@ -54,7 +54,7 @@ def main():
                     response = snafu.gui.error("Invalid command: " + command['type'])
             else:
                 response = snafu.gui.error("No command specified")
-        except Exception as e:
+        except Exception, e:
             error_msg = "Could not parse JSON message"
             if log_errors:
                 error_msg += ", see error.log for more details"

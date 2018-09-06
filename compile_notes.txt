@@ -42,9 +42,11 @@ npm run dist        # compile new version
 * might need to chmod +x interface in interface.app, but hopefully not
 * manually remove large files? (dedyne.snet, BEAGLEdata.mat)
 * zip up folder (use mac gui zip, smaller than terminal zip)
-* ~ 338mb uncompressed, ~126mb compressed
-
-** why isn't it copying all directories??? some are missing like /uploads /snet /scheme /spellfiles
+* multiple instances of "nwjs Framework" can be symlinked
+    1@ snafu.app/Contents/Versions/64.0.3282.119/nwjs Framework.framework/Versions/A
+    2@ snafu.app/Contents/Versions/64.0.3282.119/nwjs Framework.framework/
+    
+* ~ 270mb uncompressed, ~104mb compressed
 
 
 ## web version set-up

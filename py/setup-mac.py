@@ -11,7 +11,7 @@ APP = ['interface.py']
 DATA_FILES = []
 OPTIONS = {
         #'includes': ['os'],
-        'excludes': ['matplotlib','sphinx','jarjar'], #,'scipy'],
+        'excludes': ['matplotlib','sphinx','jarjar','scipy'],
         'argv_emulation': True
         }
 
