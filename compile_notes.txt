@@ -60,12 +60,19 @@ misc notes:
     - all python packages are installed (networkx, scipy, etc)
     - /uploads and /output are  777
 
-## compiling on windows with py2exe
+## compiling on windows with pyinstaller (no more py2exe)
 
-* may requires: appdirs, packaging
-* may run into strange problems, google and try to solve them
+* successfully compiled using python 2.7
+* python 3 is not yet tested
 
+* if not installed already
+pip install pyinstaller 
+
+* compilation:
 cd py
-python setup-win.py py2exe 
+pyinstaller interface.py 	# should take 5-10 minutes 
 cd ..
 npm run dist-win
+
+* and then the compiled version should appear in ./dist/
+* ~ 271mb unzipped, ~110mb zipped (using 7-Zip with smallest size specification)

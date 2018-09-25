@@ -1,4 +1,4 @@
-var snafu_type = "nwjs-app";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
+var snafu_type = "nwjs-win";  // This is important! Are you using "web", "nwjs-py" (Python scripts), or "nwjs-app" (compiled Python)?
 var debug_mode = 0;           // only applies to nwjs-py version only
 
 
@@ -86,7 +86,7 @@ if (snafu_type == "web") {
 // NON WEB VERSION
     
     // debug?
-    if (debug_mode & (snafu_type=="nwjs-py" | snafu_type=="nwjs-app")) {
+    if (debug_mode) {
         var win = nw.Window.get();
         win.showDevTools();
     }
@@ -139,7 +139,7 @@ if (snafu_type == "web") {
         }
 
     // Compiled Python version
-    } else if (snafu_type == "nwjs-app") {
+    } else if (snafu_type == "nwjs-app" || snafu_type == "nwjs-win") {
         //var pyapp = require('../js/openinterface');
         //var pyinterface = pyapp.init(console);
        
@@ -147,8 +147,12 @@ if (snafu_type == "web") {
         var win = gui.Window.get();
 
         var spawn = require('child_process').spawn;
-        var pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface',['nwjs-app']);
-                
+        var pyapp;
+        if(snafu_type=="nwjs-app")
+            pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface',['nwjs-app']);
+        else
+            pyapp = spawn('./py/dist/interface/interface.exe',['nwjs-win']);
+
         var buffer = ''
         pyapp.stdout.on('data', function(data) {
             buffer += data.toString();
