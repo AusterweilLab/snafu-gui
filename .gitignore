@@ -10,6 +10,8 @@ error.log
 py/snafu
 snet/dedyne.snet
 snet/BEAGLEdata.mat
+snet/swow.snet
+snet/swow_one.snet
 .DS_Store
 node_modules/.bin
 .DS_Store
