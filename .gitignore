@@ -12,6 +12,7 @@ snet/dedyne.snet
 snet/BEAGLEdata.mat
 snet/swow.snet
 snet/swow_one.snet
+snet/swow_animals.snet
 .DS_Store
 node_modules/.bin
 .DS_Store
