@@ -6,3 +6,14 @@ body { overflow: hidden; }
     height: 100%;
 }
 
+.btn {
+    font-size: 15px;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+/* remove button styling
+   https://css-tricks.com/overriding-default-button-styles/
+*/
+
+.btn:hover, .btn:focus { background: #999; }

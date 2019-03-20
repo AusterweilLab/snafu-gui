@@ -8,18 +8,14 @@
     </head>
 
     <body>
-        <button id="svg_export">Save as SVG</button>
+        <button id="svg_export" class="btn">Save as SVG</button><br>
+        <button id="zoom_in" class="btn">+</button>
+        <button id="zoom_out" class="btn">-</button>
+
         <div id="graph-container"></div>
         <script type="text/javascript" src="../js/viewgraph.js"></script>
+        <script type="text/javascript" src="../js/viewgraph_buttons.js"></script>
+        
     </body>
 
-    <!-- export to svg button -->
-    <script type="text/javascript">
-        document.getElementById('svg_export').onclick = function() {
-            console.log('Exporting network as SVG...');
-            var output = s.toSVG({download: true, filename: 'mygraph.svg', labels: true, data: true, size: 1000});
-        };
-    </script>
-    
-    
 </html>
