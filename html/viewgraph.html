@@ -4,11 +4,22 @@
         <script type="text/javascript" src="../lib/sigma.min.js"></script>
         <script type="text/javascript" src="../lib/sigma.layout.forceAtlas2.js"></script>
         <script type="text/javascript" src="../lib/sigma.plugins.dragNodes.js"></script>
+        <script type="text/javascript" src="../lib/sigma.exporters.svg.js"></script>
     </head>
 
     <body>
+        <button id="svg_export">Save as SVG</button>
         <div id="graph-container"></div>
         <script type="text/javascript" src="../js/viewgraph.js"></script>
     </body>
+
+    <!-- export to svg button -->
+    <script type="text/javascript">
+        document.getElementById('svg_export').onclick = function() {
+            console.log('Exporting network as SVG...');
+            var output = s.toSVG({download: true, filename: 'mygraph.svg', labels: true, data: true, size: 1000});
+        };
+    </script>
+    
     
 </html>
