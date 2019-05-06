@@ -12,19 +12,19 @@ data_parameters = {
     "subject": "",
     "group": "",
     "category": "",
-    "spellfile": "kendra spellfile",
+    "spellfile": "animals snafu spellfile",
     "cluster_type": "fluid",
-    "cluster_scheme": "troyer hills zemla animals",
+    "cluster_scheme": "animals snafu scheme",
     "freqfiles": [],
     "aoafiles": [],
-    "freqfile": "sublex us",
+    "freqfile": "subtlex-us",
     "aoafile": "kuperman"
 }
 
 network_parameters = {
     "starting_graphs": ["goni_valid","chan_valid","kenett_valid","rw","fully_connected"],
     "starting_graph": "goni_valid",
-    "network_methods": ["Chan", "FirstEdge", "Goni", "Kenett", "RW",  "U-INVITE"],
+    "network_methods": ["Pathfinder", "First Edge", "Community Network", "Correlation-based Network", "Naive Random Walk",  "U-INVITE"],
     "network_method": "U-INVITE",
     "jump_probability": 0.0,
     "jump_types": ["stationary","uniform"],

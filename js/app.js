@@ -92,6 +92,17 @@ if (snafu_type == "web") {
     }
 
     // populate spellfiles and schemes. this could be in interface.py to be consistent with web version...
+    //
+    // data_parameters['freqfiles'].push("None");
+    // data_parameters['aoafiles'].push("None");
+    data_parameters['freq_sub']=0.5;
+    data_parameters['spellfiles'].push("None");
+    data_parameters['cluster_schemes'].push("None");
+   
+    data_parameters['cluster_schemes'].push("Phonemic: 1 letter")
+    data_parameters['cluster_schemes'].push("Phonemic: 2 letters")
+    data_parameters['cluster_schemes'].push("Phonemic: 3 letters")
+
     const fs = require('fs');
     fs.readdirSync('spellfiles/').forEach(file => {
         if (file.search(".csv") >= 0) {
@@ -108,11 +119,6 @@ if (snafu_type == "web") {
             data_parameters['aoafiles'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
         }
     })
-    // data_parameters['freqfiles'].push("None");
-    // data_parameters['aoafiles'].push("None");
-    data_parameters['freq_sub']=0.5;
-    data_parameters['spellfiles'].push("None");
-    data_parameters['cluster_schemes'].push("None");
     
     fs.readdirSync('schemes/').forEach(file => {
         if (file.search(".csv") >= 0) {
