@@ -51,7 +51,11 @@ def main():
                         error_msg = "Unknown error in function: " + command['type']
                         if log_errors:
                             error_msg += ", see error.log for more details"
-                            logger.error('UNKNOWN ' + str(e))
+
+                            exc_type, exc_obj, exc_tb = sys.exc_info()
+                            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+                            logger.error(fname + ':' + str(exc_tb.tb_lineno) + " UNKNOWN")
+                            logger.exception(e)
                         response = snafu.gui.error(error_msg)
                     if command['type'] == "quit":
                         exit_status = 1
@@ -63,7 +67,12 @@ def main():
             error_msg = "Could not parse JSON message"
             if log_errors:
                 error_msg += ", see error.log for more details"
-                logger.error('JSON '+ str(e))
+                
+                # print filename and line no; https://stackoverflow.com/a/1278740/353278
+                exc_type, exc_obj, exc_tb = sys.exc_info()
+                fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+                logger.error(fname + ':' + str(exc_tb.tb_lineno) + " JSON")
+                logger.exception(e)
             response = snafu.gui.error(error_msg)
             response = snafu.gui.error(", see error.log for more details")
         sys.stdout.write(json.dumps(response) + "\n")

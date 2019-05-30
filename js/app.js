@@ -52,7 +52,6 @@ if (snafu_type == "web") {
     pysend({"type": "directory_listing", "folder": "spellfiles"});
     pysend({"type": "directory_listing", "folder": "freqfiles"});
     pysend({"type": "directory_listing", "folder": "aoafiles"});
-    data_parameters['freq_sub']=0.5;
     data_parameters['spellfiles'].push("None");
     data_parameters['cluster_schemes'].push("None");
     // data_parameters['freqfiles'].push("None");
@@ -95,7 +94,6 @@ if (snafu_type == "web") {
     //
     // data_parameters['freqfiles'].push("None");
     // data_parameters['aoafiles'].push("None");
-    data_parameters['freq_sub']=0.5;
     data_parameters['spellfiles'].push("None");
     data_parameters['cluster_schemes'].push("None");
    

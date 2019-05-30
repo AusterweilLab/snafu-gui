@@ -5,6 +5,8 @@ These directories are hard links:
 snet/
 schemes/
 spellfiles/
+aoa/
+frequency/
 
 They are synched with snafu-py. If deleted here, they are deleted for snafu-py instead!
 They are made using https://github.com/selkhateeb/hardlink

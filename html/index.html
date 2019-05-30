@@ -74,14 +74,25 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td>Word freq. N/A sub. (-1 to exclude)</td>
-                    <td><input id="freq_sub" type="number" rv-value="data_parameters.freq_sub"></td>
+                    <td>Impute missing frequency</td>
+                    <td><input id="freq_sub" type="number" rv-value="data_parameters.freq_sub" min="0"
+                               rv-disabled="data_parameters.freq_ignore">
+                        or Ignore? <input type="checkbox" rv-checked="data_parameters.freq_ignore">
+                    </td>
                 </tr>
                 <tr>
                     <td>Word age-of-acquisition file</td>
                     <td><select id="aoafile" rv-value="data_parameters.aoafile">
                             <option rv-each-aoafile="data_parameters.aoafiles">{ aoafile }</option>
                         </select></td>
+                <tr>
+                    <td>Impute missing age-of-aquisition</td>
+                    <td><input id="aoa_sub" type="number" rv-value="data_parameters.aoa_sub" min="0"
+                               rv-disabled="data_parameters.aoa_ignore">
+                        or Ignore? <input type="checkbox" rv-checked="data_parameters.aoa_ignore">
+                    </td>
+                </tr>
+                        
                 </tr>
             </table>
         </div>
@@ -165,13 +176,13 @@
                             <option rv-each-starting_graph="network_parameters.starting_graphs">{ starting_graph }</option>
                         </select></td>
                 </tr>
-                <tr rv-show="network_parameters.network_method | hasProp 'goni_windowsize'">
-                    <td>Goni window size</td>
-                    <td rv-value="network_parameters.goni_windowsize"><input type="number" min="1" id="goni_windowsize" rv-value="network_parameters.goni_windowsize"></td>
+                <tr rv-show="network_parameters.network_method | hasProp 'cn_windowsize'">
+                    <td>Window size</td>
+                    <td rv-value="network_parameters.cn_windowsize"><input type="number" min="1" id="windowsize" rv-value="network_parameters.cn_windowsize"></td>
                 </tr>
-                <tr rv-show="network_parameters.network_method | hasProp 'goni_threshold'">
-                    <td>Goni threshold</td>
-                    <td rv-value="network_parameters.goni_threshold"><input type="number" min="1" id="goni_threshold" rv-value="network_parameters.goni_threshold"></td>
+                <tr rv-show="network_parameters.network_method | hasProp 'cn_threshold'">
+                    <td>Threshold</td>
+                    <td rv-value="network_parameters.cn_threshold"><input type="number" min="1" id="threshold" rv-value="network_parameters.cn_threshold"></td>
                 </tr>
                 <tr rv-show="network_parameters.network_method | hasProp 'first_item'">
                     <td>First list item</td>

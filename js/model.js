@@ -18,7 +18,11 @@ data_parameters = {
     "freqfiles": [],
     "aoafiles": [],
     "freqfile": "subtlex-us",
-    "aoafile": "kuperman"
+    "aoafile": "kuperman",
+    "freq_sub": 0.5,
+    "aoa_sub": "",
+    "freq_ignore": false,
+    "aoa_ignore": true
 }
 
 network_parameters = {
@@ -34,8 +38,8 @@ network_parameters = {
     "first_items": ["stationary","uniform"],
     "first_item": "stationary",
     "prior": "None",
-    "goni_windowsize": 2,
-    "goni_threshold": 2
+    "cn_windowsize": 2,
+    "cn_threshold": 2
 }
 
 data_properties = { }
@@ -43,12 +47,12 @@ network_properties = { }
 
 // Defines which models take which parameters (for hide/show in interface)
 params={}
-params['U-INVITE'] = ['prior', 'starting_graph', 'goni_windowsize', 'goni_threshold', 'first_item', 'jump_type', 'jump_probability', 'priming_probability']
-params['RW'] = []
-params['Kenett'] = []
-params['Goni'] = ['goni_threshold', 'goni_windowsize']
-params['Chan'] = []
-params['FirstEdge'] = []
+params['U-INVITE'] = ['prior', 'starting_graph', 'cn_windowsize', 'cn_threshold', 'first_item', 'jump_type', 'jump_probability', 'priming_probability']
+params['Naive Random Walk'] = []
+params['Correlation-based Network'] = []
+params['Community Network'] = ['cn_threshold', 'cn_windowsize']
+params['Pathfinder'] = []
+params['First Edge'] = []
 
 // Rivets formatters
 rivets.formatters.trunc = function(value) {

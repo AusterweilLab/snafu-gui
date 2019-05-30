@@ -1,13 +1,14 @@
 body {
     padding: 50px;
-    background-color: #dddddd;
+    background-color: #ddd;
+    overflow: hidden;
 }
 
 #fluency_files { width: 350px; }
 
 .box {
     width: 48%;
-    height: 200px;
+    height: 100%;
     margin-bottom: 15px;
     margin-top: 20px;
     border: 2px solid grey;
@@ -22,6 +23,7 @@ body {
     /* width: 1000px; */
     min-width: 1000px;
     width: 90%;
+    height: 40%;
     clear: both;
 }
 
@@ -37,8 +39,8 @@ body {
 
 td { padding: 5px; }
 
-#data_parameters th, #network_parameters th { background-color: #ffcccc; }
-#data_properties th, #network_properties th { background-color: #ccccff; }
+#data_parameters th, #network_parameters th { background-color: #ffcccc; width: 110%; }
+#data_properties th, #network_properties th { background-color: #ccccff; width: 110%; }
 
 th {
     padding: 3px;
