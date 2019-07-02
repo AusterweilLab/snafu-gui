@@ -184,6 +184,10 @@
                     <td>Threshold</td>
                     <td rv-value="network_parameters.cn_threshold"><input type="number" min="1" id="threshold" rv-value="network_parameters.cn_threshold"></td>
                 </tr>
+                <tr rv-show="network_parameters.network_method | hasProp 'cn_alpha'">
+                    <td>Alpha</td>
+                    <td rv-value="network_parameters.cn_alpha"><input type="number" min="0.0" max="1.0" id="alpha" rv-value="network_parameters.cn_alpha"></td>
+                </tr>
                 <tr rv-show="network_parameters.network_method | hasProp 'first_item'">
                     <td>First list item</td>
                     <td><select id="first_items" rv-value="network_parameters.first_item">

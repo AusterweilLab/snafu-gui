@@ -39,7 +39,9 @@ network_parameters = {
     "first_item": "stationary",
     "prior": "None",
     "cn_windowsize": 2,
-    "cn_threshold": 2
+    "cn_threshold": 2,
+    "cn_alpha": 0.05
+
 }
 
 data_properties = { }
@@ -47,10 +49,10 @@ network_properties = { }
 
 // Defines which models take which parameters (for hide/show in interface)
 params={}
-params['U-INVITE'] = ['prior', 'starting_graph', 'cn_windowsize', 'cn_threshold', 'first_item', 'jump_type', 'jump_probability', 'priming_probability']
+params['U-INVITE'] = ['prior', 'starting_graph', 'cn_windowsize', 'cn_threshold', 'cn_alpha', 'first_item', 'jump_type', 'jump_probability', 'priming_probability']
 params['Naive Random Walk'] = []
 params['Correlation-based Network'] = []
-params['Community Network'] = ['cn_threshold', 'cn_windowsize']
+params['Community Network'] = ['cn_threshold', 'cn_windowsize', 'cn_alpha']
 params['Pathfinder'] = []
 params['First Edge'] = []
 
