@@ -15534,7 +15534,8 @@ C117,8,tools,drill,2736,16528,Experiment3
 C117,8,tools,saw,6360,22888,Experiment3
 C118,0,foods,beets,7006,7006,Experiment3
 C118,0,foods,apples,3529,10535,Experiment3
-C118,0,foods,noodlescarrots,7010,17545,Experiment3
+C118,0,foods,noodles,0,0,Experiment3
+C118,0,foods,carrots,0,0,Experiment3
 C118,0,foods,cheese,4786,22331,Experiment3
 C118,0,foods,apricots,5662,27993,Experiment3
 C118,0,foods,salad,6462,34455,Experiment3
