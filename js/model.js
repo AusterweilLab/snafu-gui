@@ -26,8 +26,8 @@ data_parameters = {
 }
 
 network_parameters = {
-    "starting_graphs": ["goni_valid","chan_valid","kenett_valid","rw","fully_connected"],
-    "starting_graph": "goni_valid",
+    "starting_graphs": ["cn_valid","pf_valid","rw","fully_connected","empty_graph"],
+    "starting_graph": "cn_valid",
     "network_methods": ["Pathfinder", "First Edge", "Community Network", "Correlation-based Network", "Naive Random Walk",  "U-INVITE"],
     "network_method": "U-INVITE",
     "jump_probability": 0.0,
