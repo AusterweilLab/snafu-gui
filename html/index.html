@@ -73,6 +73,12 @@
                             <option rv-each-cluster_scheme="data_parameters.letter_cluster_schemes">{ cluster_scheme }</option>
                         </select></td>
                 </tr>
+                <tr rv-show="data_parameters.fluency_type | eq 'letter'">
+                    <td>Target letter</td>
+                    <td><select id="target_letter" rv-value="data_parameters.target_letter">
+                            <option rv-each-target_letter="data_parameters.target_letters">{ target_letter }</option>
+                        </select></td>
+                </tr>
                 <tr>
                     <td>Cluster type</td>
                     <td><select id="cluster_type" rv-value="data_parameters.cluster_type">

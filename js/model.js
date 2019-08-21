@@ -4,6 +4,7 @@ data_parameters = {
     "cluster_schemes": [],
     "semantic_cluster_schemes": [],
     "letter_cluster_schemes": ["None","1 letter","2 letters", "3 letters"],
+    "target_letters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(''),
     "spellfiles": [],
     "subjects": [],
     "groups": [],
@@ -18,6 +19,7 @@ data_parameters = {
     "group": "",
     "category": "",
     // DEFAULTS
+    "target_letter": "",
     "spellfile": "animals snafu spellfile",
     "cluster_type": "fluid",
     "fluency_type": "semantic",
