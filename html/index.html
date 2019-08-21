@@ -56,9 +56,21 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td>Cluster scheme</td>
+                    <td>Fluency type </td>
+                    <td><select id="fluency_type" rv-value="data_parameters.fluency_type">
+                            <option rv-each-fluency_type="data_parameters.fluency_types">{ fluency_type }</option>
+                        </select></td>
+                </tr>
+                <tr rv-show="data_parameters.fluency_type | eq 'semantic'">
+                    <td>Semantic cluster scheme</td>
                     <td><select id="cluster_scheme" rv-value="data_parameters.cluster_scheme">
-                            <option rv-each-cluster_scheme="data_parameters.cluster_schemes">{ cluster_scheme }</option>
+                            <option rv-each-cluster_scheme="data_parameters.semantic_cluster_schemes">{ cluster_scheme }</option>
+                        </select></td>
+                </tr>
+                <tr rv-show="data_parameters.fluency_type | eq 'letter'">
+                    <td>Letter cluster scheme</td>
+                    <td><select id="cluster_scheme" rv-value="data_parameters.cluster_scheme">
+                            <option rv-each-cluster_scheme="data_parameters.letter_cluster_schemes">{ cluster_scheme }</option>
                         </select></td>
                 </tr>
                 <tr>

@@ -11,6 +11,10 @@ $("#real_choose_file").change(function() {
     $("#fluency_dir").val("");
 });
 
+$("#fluency_type").change(function() {
+	data_parameters.cluster_scheme = "None";
+});
+
 $("#loaddata").click(function() {
 	data_parameters.dir = $("#fluency_dir").val(); 
     data_parameters.filename = $("#fluency_files").val();

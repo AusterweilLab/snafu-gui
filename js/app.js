@@ -95,12 +95,8 @@ if (snafu_type == "web") {
     // data_parameters['freqfiles'].push("None");
     // data_parameters['aoafiles'].push("None");
     data_parameters['spellfiles'].push("None");
-    data_parameters['cluster_schemes'].push("None");
+    data_parameters['semantic_cluster_schemes'].push("None");
    
-    data_parameters['cluster_schemes'].push("Phonemic: 1 letter")
-    data_parameters['cluster_schemes'].push("Phonemic: 2 letters")
-    data_parameters['cluster_schemes'].push("Phonemic: 3 letters")
-
     const fs = require('fs');
     fs.readdirSync('spellfiles/').forEach(file => {
         if (file.search(".csv") >= 0) {
@@ -120,7 +116,7 @@ if (snafu_type == "web") {
     
     fs.readdirSync('schemes/').forEach(file => {
         if (file.search(".csv") >= 0) {
-            data_parameters['cluster_schemes'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
+            data_parameters['semantic_cluster_schemes'].push(file.substr(0,file.search(".csv")).replace(/\_/g," "));
         }
     })
    
