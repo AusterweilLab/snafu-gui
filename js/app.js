@@ -69,7 +69,8 @@ if (snafu_type == "nwjs-py") {
 
     const PythonShell = require('python-shell');
     options  = { mode: 'text',
-                 args: ['nwjs-py'] }
+                 args: ['nwjs-py'],
+                 pythonPath: 'python3' }
     const pyshell = new PythonShell('py/interface.py', options);
     pyshell.on('message', pyreplace);
 
