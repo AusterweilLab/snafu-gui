@@ -11,16 +11,12 @@ else:
     if sys.argv[1] == "nwjs-win":
         py2app = 2           # compiled on windows
     else:
-        py2app = 0          # is interface.py compiled with py2app?
+        py2app = 0          # not compiled
 
 log_errors = 1      # do you want to log errors?
 
 # get SNAFU root path
 root_path = Path(os.getcwd())
-if py2app==1:
-    root_path = root_path.parent.parent.parent.parent.parent
-if py2app==2:
-    root_path = root_path # this line seems unnecessary but takes lots of debugging time
 root_path = str(root_path)
 
 

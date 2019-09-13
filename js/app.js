@@ -1,4 +1,4 @@
-var snafu_type = "nwjs-py";  // This is important! Are you using "nwjs-py" (Python scripts), "nwjs-app" (compiled for Mac), or "nwjs-win" (compiled for Windows)?
+var snafu_type = "nwjs-app";  // This is important! Are you using "nwjs-py" (Python scripts), "nwjs-app" (compiled for Mac), or "nwjs-win" (compiled for Windows)?
 var debug_mode = 0;           // only applies to nwjs-py version only
 
 
@@ -91,7 +91,7 @@ if (snafu_type == "nwjs-py") {
     var spawn = require('child_process').spawn;
     var pyapp;
     if(snafu_type=="nwjs-app")
-        pyapp = spawn('./py/dist/interface.app/Contents/MacOS/interface',['nwjs-app']);
+        pyapp = spawn('./py/dist/interface/interface',['nwjs-app']);
     else
         pyapp = spawn('./py/dist/interface/interface.exe',['nwjs-win']);
 
