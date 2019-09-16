@@ -1,4 +1,4 @@
-# snafu
+# snafu graphical user interface
 
 SNAFU is a Python library for analyzing verbal fluency data and estimating networks from fluency data (see https://github.com/AusterweilLab/snafu-py).
 
