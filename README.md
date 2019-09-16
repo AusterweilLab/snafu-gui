@@ -1,8 +1,9 @@
 # snafu
 
-GUI for semnet package (though much less extensive). This is the development version, it does not include `nwjs` required to run, 
-nor does it include `semnet` binaries (you must download the `semnet` package separately and place the `rw` folder in `/py`). 
-Actually that sounds complicated, why don't you just use the web version at http://alab.psych.wisc.edu/snafu? Or if you really want
-the desktop version, e-mail me at zemla at wisc dot edu for help.
+SNAFU is a Python library for analyzing verbal fluency data and estimating networks from fluency data (see https://github.com/AusterweilLab/snafu-py).
 
-_Support for this research was provided by NIH R21AG0534676 and the Office of the VCGRE at UW- Madison with funding from the WARF._
+This repo hosts the code for a graphical front-end to the Python library. You probably are looking for the pre-packaged version of the GUI available at http://alab.psych.wisc.edu/snafu. This repo is primarily for people who want to contribute to the GUI code (i.e., make changes to it).
+
+To run this code from source, you will need to install snafu for Python (link above) as well as nw.js (http://hwjs.io). Neither are included in this repo.
+
+Support for this research was provided by NLM T15LM007359, NIH R21AG0534676 and the Office of the VCGRE at UW- Madison with funding from the WARF. 
