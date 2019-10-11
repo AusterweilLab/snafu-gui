@@ -60,6 +60,8 @@ $("#view_network").click(function() {
         "width": 1000});
 });
 
+
+// eliminate since we no longer use web version (relabel ids)
 $("#export_data").click(function() {
     if (snafu_type == "web") {
         command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }

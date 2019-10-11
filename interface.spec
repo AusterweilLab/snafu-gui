@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['interface.py'],
-             pathex=['/Users/jcz/Dropbox/projects/semnet/snafu-gui/py'],
+             pathex=['/Users/jcz/Dropbox/projects/semnet/snafu-gui'],
              binaries=[],
              datas=[],
              hiddenimports=[],
