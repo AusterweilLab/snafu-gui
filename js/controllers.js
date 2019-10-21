@@ -61,20 +61,15 @@ $("#view_network").click(function() {
 });
 
 
-// eliminate since we no longer use web version (relabel ids)
 $("#export_data").click(function() {
-    if (snafu_type == "web") {
-        command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
-        pysend(command)
-    } else {
-		$("#real_export_data").click();
-	}
+    $("#real_export_data").click();
 });
 
 $("#real_export_data").change(function() {
     function saveFile(filename) {
         var fs = require('fs');
-        fs.writeFile(filename, JSON.stringify(data_properties,null,'\t'), function(err) {
+        export_json = {"data_properties": data_properties, "data_parameters": data_parameters}
+        fs.writeFile(filename, JSON.stringify(export_json,null,'\t'), function(err) {
             if(err) {
                 return console.log(err);
             }
@@ -262,13 +257,7 @@ $("#real_import_network").change(function() {
 });
 
 $("#export_data_csv").click(function() {
-    if (snafu_type == "web") {
-        // NOT YET IMPLEMENTED
-        // command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
-        // pysend(command)
-    } else {
         $("#real_export_data_csv").click();
-    }
 });
 
 $("#real_export_data_csv").change(function() {

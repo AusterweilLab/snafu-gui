@@ -21,7 +21,7 @@ body {
 
 #data_row, #network_row {
     /* width: 1000px; */
-    min-width: 1000px;
+    min-width: 1200px;
     width: 90%;
     height: 40%;
     clear: both;
