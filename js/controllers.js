@@ -208,6 +208,14 @@ $("#question").click(function() {
 // #something to do with the element being hidden on start, but not sure why it used to work
 // https://stackoverflow.com/a/11050439/353278
 
+$("body").on("click","#spellcorrect_list",function(e) {
+    e.preventDefault();
+    openwindow("spellcorrect.html", {
+        "title": "Spelling corrections",
+        "height": 300,
+        "width": 300});
+});
+
 $("body").on("click","#intrusion_list",function(e) {
     e.preventDefault();
     openwindow("intrusions.html", {

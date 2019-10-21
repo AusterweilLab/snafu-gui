@@ -126,6 +126,12 @@
                     </th>   
                 </tr>
                 <tr>
+                    <td>Total number of spelling corrections</td>
+                    <td>{ data_properties.num_spell_corrections | trunc }
+                        <a rv-if="data_properties.num_spell_corrections" id="spellcorrect_list" href="#">(list)</a>
+                    </td>
+                </tr>
+                <tr>
                     <td>Avg number of lists</td>
                     <td>{ data_properties.num_lists | trunc }</td>
                 </tr>
