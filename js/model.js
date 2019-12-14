@@ -1,7 +1,6 @@
 data_parameters = { 
     "fluency_types": ["semantic", "letter"],
     "cluster_types": ["fluid", "static"],
-    "cluster_schemes": [],
     "semantic_cluster_schemes": [],
     "letter_cluster_schemes": ["None","1 letter","2 letters", "3 letters"],
     "target_letters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(''),
@@ -34,7 +33,7 @@ data_parameters = {
 
 network_parameters = {
     "starting_graphs": ["cn_valid","pf_valid","rw","fully_connected","empty_graph"],
-    "network_methods": ["Pathfinder", "First Edge", "Community Network", "Correlation-based Network", "Naive Random Walk",  "U-INVITE"],
+    "network_methods": ["Pathfinder", "First Edge", "Conceptual Network", "Correlation-based Network", "Naive Random Walk",  "U-INVITE"],
     "jump_types": ["stationary","uniform"],
     "priors": ["None", "USF"],
     "first_items": ["stationary","uniform"],
@@ -56,7 +55,7 @@ model_parameters={
     "U-INVITE": ['prior', 'starting_graph', 'cn_windowsize', 'cn_threshold', 'cn_alpha', 'first_item', 'jump_type', 'jump_probability', 'priming_probability'],
     "Naive Random Walk": [],
     "Correlation-based Network": [],
-    "Community Network": ['cn_threshold', 'cn_windowsize', 'cn_alpha'],
+    "Conceptual Network": ['cn_threshold', 'cn_windowsize', 'cn_alpha'],
     "Pathfinder": [],
     "First Edge": []
 }

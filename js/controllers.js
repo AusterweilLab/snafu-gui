@@ -35,6 +35,7 @@ $("#reset").click(function() {
 });
 
 $("#calculate_data_properties").click(function() {
+    data_parameters_clone = JSON.parse(JSON.stringify(data_parameters));    // deep copy of data parameters at time of compute for Export Summary
     data_properties = {};
     data_properties_rvs.update({ data_properties: data_properties });
     command = { "type": "data_properties",
@@ -68,7 +69,32 @@ $("#export_data").click(function() {
 $("#real_export_data").change(function() {
     function saveFile(filename) {
         var fs = require('fs');
-        export_json = {"data_properties": data_properties, "data_parameters": data_parameters}
+        data_properties_clone = JSON.parse(JSON.stringify(data_properties))  // deep copy of data properties for Export Summary
+        export_json = {"data_properties": data_properties_clone, "data_parameters": data_parameters_clone}
+        // delete some junk
+        delete export_json['data_properties']['csv_file'];
+        delete export_json['data_parameters']['fluency_types'];
+        delete export_json['data_parameters']['cluster_types'];
+        delete export_json['data_parameters']['categories'];
+        delete export_json['data_parameters']['semantic_cluster_schemes'];
+        delete export_json['data_parameters']['letter_cluster_schemes'];
+        delete export_json['data_parameters']['target_letters'];
+        delete export_json['data_parameters']['spellfiles'];
+        delete export_json['data_parameters']['subjects'];
+        delete export_json['data_parameters']['groups'];
+        delete export_json['data_parameters']['freqfiles'];
+        delete export_json['data_parameters']['aoafiles'];
+        if (export_json['data_parameters']['factor_type'] == "subject") {
+            delete export_json['data_parameters']['group'];
+        } else {
+            delete export_json['data_parameters']['subject'];
+        }
+        if (export_json['data_parameters']['fluency_type'] == "semantic") {
+            delete export_json['data_parameters']['target_letter'];
+        } else {
+            delete export_json['data_parameters']['cluster_scheme'];
+        }
+
         fs.writeFile(filename, JSON.stringify(export_json,null,'\t'), function(err) {
             if(err) {
                 return console.log(err);

@@ -1,4 +1,4 @@
-var snafu_type = "nwjs-app";  // This is important! Are you using "nwjs-py" (Python scripts), "nwjs-app" (compiled for Mac), or "nwjs-win" (compiled for Windows)?
+var snafu_type = "nwjs-py";  // This is important! Are you using "nwjs-py" (Python scripts), "nwjs-app" (compiled for Mac), or "nwjs-win" (compiled for Windows)?
 
 if (snafu_type == "nwjs-py") {
     var debug_mode = 1;

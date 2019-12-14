@@ -2,6 +2,9 @@
 echo "Did you remember to update versioning everywhere? (package.json, html/index.html, py/snafu/_version.py)"
 echo "Press enter if yes, otherwise please abort"
 read
+echo "Did you remember to change flag in app.js to nwjs-app?"
+echo "Press enter if yes, otherwise please abort"
+
 
 sudo rm -rf ../dist
 sudo rm -rf ../dist/snafu.dmg
