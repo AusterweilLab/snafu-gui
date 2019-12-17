@@ -35,6 +35,7 @@ $("#reset").click(function() {
 });
 
 $("#calculate_data_properties").click(function() {
+    data_parameters_clone = JSON.parse(JSON.stringify(data_parameters));    // deep copy of data parameters at time of compute for Export Summary
     data_properties = {};
     data_properties_rvs.update({ data_properties: data_properties });
     command = { "type": "data_properties",
@@ -61,20 +62,40 @@ $("#view_network").click(function() {
 });
 
 
-// eliminate since we no longer use web version (relabel ids)
 $("#export_data").click(function() {
-    if (snafu_type == "web") {
-        command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
-        pysend(command)
-    } else {
-		$("#real_export_data").click();
-	}
+    $("#real_export_data").click();
 });
 
 $("#real_export_data").change(function() {
     function saveFile(filename) {
         var fs = require('fs');
-        fs.writeFile(filename, JSON.stringify(data_properties,null,'\t'), function(err) {
+        data_properties_clone = JSON.parse(JSON.stringify(data_properties))  // deep copy of data properties for Export Summary
+        export_json = {"data_properties": data_properties_clone, "data_parameters": data_parameters_clone}
+        // delete some junk
+        delete export_json['data_properties']['csv_file'];
+        delete export_json['data_parameters']['fluency_types'];
+        delete export_json['data_parameters']['cluster_types'];
+        delete export_json['data_parameters']['categories'];
+        delete export_json['data_parameters']['semantic_cluster_schemes'];
+        delete export_json['data_parameters']['letter_cluster_schemes'];
+        delete export_json['data_parameters']['target_letters'];
+        delete export_json['data_parameters']['spellfiles'];
+        delete export_json['data_parameters']['subjects'];
+        delete export_json['data_parameters']['groups'];
+        delete export_json['data_parameters']['freqfiles'];
+        delete export_json['data_parameters']['aoafiles'];
+        if (export_json['data_parameters']['factor_type'] == "subject") {
+            delete export_json['data_parameters']['group'];
+        } else {
+            delete export_json['data_parameters']['subject'];
+        }
+        if (export_json['data_parameters']['fluency_type'] == "semantic") {
+            delete export_json['data_parameters']['target_letter'];
+        } else {
+            delete export_json['data_parameters']['cluster_scheme'];
+        }
+
+        fs.writeFile(filename, JSON.stringify(export_json,null,'\t'), function(err) {
             if(err) {
                 return console.log(err);
             }
@@ -213,6 +234,14 @@ $("#question").click(function() {
 // #something to do with the element being hidden on start, but not sure why it used to work
 // https://stackoverflow.com/a/11050439/353278
 
+$("body").on("click","#spellcorrect_list",function(e) {
+    e.preventDefault();
+    openwindow("spellcorrect.html", {
+        "title": "Spelling corrections",
+        "height": 300,
+        "width": 300});
+});
+
 $("body").on("click","#intrusion_list",function(e) {
     e.preventDefault();
     openwindow("intrusions.html", {
@@ -262,13 +291,7 @@ $("#real_import_network").change(function() {
 });
 
 $("#export_data_csv").click(function() {
-    if (snafu_type == "web") {
-        // NOT YET IMPLEMENTED
-        // command = { "type": "write_data", "writestring": JSON.stringify(data_properties) }
-        // pysend(command)
-    } else {
         $("#real_export_data_csv").click();
-    }
 });
 
 $("#real_export_data_csv").change(function() {

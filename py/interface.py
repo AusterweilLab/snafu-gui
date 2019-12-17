@@ -18,6 +18,7 @@ log_errors = 1      # do you want to log errors?
 # get SNAFU root path
 root_path = Path(os.getcwd())
 root_path = str(root_path)
+errorlogfile = root_path + "/error.log"
 
 
 if log_errors:
@@ -46,7 +47,7 @@ def main():
                     except Exception as e:
                         error_msg = "Unknown error in function: " + command['type']
                         if log_errors:
-                            error_msg += ", see error.log for more details"
+                            error_msg += ", see error log for more details: " + errorlogfile
 
                             exc_type, exc_obj, exc_tb = sys.exc_info()
                             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -62,7 +63,7 @@ def main():
         except Exception as e:
             error_msg = "Could not parse JSON message"
             if log_errors:
-                error_msg += ", see error.log for more details"
+                error_msg += ", see error log for more details: " + errorlogfile
                 
                 # print filename and line no; https://stackoverflow.com/a/1278740/353278
                 exc_type, exc_obj, exc_tb = sys.exc_info()
@@ -70,7 +71,7 @@ def main():
                 logger.error(fname + ':' + str(exc_tb.tb_lineno) + " JSON")
                 logger.exception(e)
             response = snafu.gui.error(error_msg)
-            response = snafu.gui.error(", see error.log for more details")
+            response = snafu.gui.error(", see error log for more details: " + errorlogfile)
         sys.stdout.write(json.dumps(response) + "\n")
         sys.stdout.flush()
 
