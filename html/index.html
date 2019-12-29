@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../js/controllers.js" defer></script>
 </head>
 <body>
-    <div id="about"> v 2.4.0 </div>
+    <div id="about"> v 2.4.1 </div>
     <div id="input_row">
         <input type="text" id="fluency_files" value="results_cleaned.csv">
 		<input type="hidden" id="fluency_dir" value="../uploads">
@@ -143,6 +143,10 @@
                     <td>Avg number of cluster switches</td>
                     <td>{ data_properties.avg_num_cluster_switches | trunc }</td>
                 </tr>
+                <tr>
+                    <td>Avg cluster switch rate</td>
+                    <td>{ data_properties.avg_cluster_switchrate | trunc }</td>
+                </tr>                
                 <tr>
                     <td>Avg cluster size</td>
                     <td>{ data_properties.avg_cluster_size | trunc }</td>
