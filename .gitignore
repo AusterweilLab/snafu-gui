@@ -8,7 +8,7 @@ py/.eggs/
 error.log
 .*.swp
 py/snafu
-snet/dedyne.snet
+snet/dedeyne.snet
 snet/BEAGLEdata.mat
 snet/swow.snet
 snet/swow_one.snet
