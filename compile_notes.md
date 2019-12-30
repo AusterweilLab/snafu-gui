@@ -14,8 +14,12 @@ To remove them, use `hln -u [dir]` instead
 
 Hard links are used to assist with github synching without maintaining multiple separate copies
 
+## compiling on mac
 
-## compiling with pyinstaller
+cd py
+./setup-mac.sh
+
+## compiling on windows
 
 * successfully compiled using python 3.5
 
@@ -26,7 +30,7 @@ pip install pyinstaller
 cd py
 sudo pyinstaller interface.py 	# should take 5-10 minutes 
 cd ..
-sudo npm run dist-win  **OR** npm run dist
+sudo npm run dist-win
 
 * and then the compiled version should appear in ./dist/
 * ~ 271mb unzipped, ~110mb zipped (using 7-Zip with smallest size specification)
