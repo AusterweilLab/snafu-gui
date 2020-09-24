@@ -15,9 +15,11 @@
     "dist-win": "build --tasks win-x64 --mirror https://dl.nwjs.io/ ."
   },
   "description": "GUI for snafu-py package (though much less extensive). This is the development version, it does not include `nwjs` required to run, nor does it include `snafu-py` scripts (you must download the `snafu-py` package separately and place the `rw` folder in `/py`).  Actually that sounds complicated, why don't you just use the web version at http://alab.psych.wisc.edu/snafu? Or if you really want the desktop version, e-mail me at zemla at wisc dot edu for help.",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "dependencies": {
     "concat": "^1.0.0",
+    "core-util-is": "^1.0.2",
+    "invert-kv": "^3.0.1",
     "python-shell": "^0.3.0"
   },
   "devDependencies": {

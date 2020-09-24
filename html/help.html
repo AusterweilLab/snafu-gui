@@ -1,17 +1,20 @@
-- Format your file like <a href="../uploads/results_cleaned.csv">this file</a>.
+- Zemla, Cao, Mueller, & Austerweil (2020) is meant to serve as a tutorial / manual for this software.
 <br><br>
 
-- You will need a header row with subject id, list identifier, category label, and item response.
+- Your data file should be a CSV file formatted like <a href="../uploads/results_cleaned.csv">this example</a>.
 <br><br>
 
-- SNAFU can be picky about file encoding
+- You will need a header row with these columns (extra columns are ignoresd): id (subject id), listnum (list identifier), category (e.g., animals or letterF), and item (the participant's response).
 <br><br>
 
-- Large graphs may take some time to fit, especially with U-INVITE! Currently there is a loading icon, but no other progress indicator. If you've been waiting a few minutes, double check there are no javascript errors in the development console. (This software is super alpha, sorry!)
+- SNAFU can be picky about file encoding and is not very forgiving if you are missing cells in your spreadsheet
 <br><br>
 
-- Parameters in "Network Parameters" mostly apply to U-INVITE. Of note, the "jump probability" and "priming probability" are likely to have the largest impacts on your network. Jump probability indicates the probability of taking a random jump to another node at any point in time. Priming probability is more complicated, but useful when lists are collected in a single session from a single participant (see Zemla & Austerweil, 2017).
+- Large networks may take some time to fit, especially with U-INVITE! Currently there is a loading icon, but no other progress indicator. If you've been waiting a few minutes, you could check error.log in the main directory. (On a mac, this file is buried within the .app for reasons beyond my control.) This is research software, and we make no guarantees that things will work as expected.
 <br><br>
 
-- Other questions, contact me at zemla@wisc.edu
+Some additional network parameters are not well documented. For example the "jump probability" and "priming probability" are likely to have large impacts on your network. Jump probability indicates the probability of taking a random jump to another node at any point in time. Priming probability is more complicated, but useful when lists are collected in a single session from a single participant (see Zemla & Austerweil, 2017 CogSci proceedings).
+<br><br>
+
+- Other questions, contact me at jczemla@syr.edu
 

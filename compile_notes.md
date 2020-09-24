@@ -29,6 +29,7 @@ pip install pyinstaller
 * compilation:
 cd py
 sudo pyinstaller interface.py 	# should take 5-10 minutes 
+	* If that doesn't work, try: python -m PyInstaller interface.py
 cd ..
 sudo npm run dist-win
 
